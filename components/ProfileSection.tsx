@@ -35,13 +35,13 @@ export default function ProfileSection({
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/40 to-black/60" />
 
       {/* Email link at top-left */}
-      <a
+      {/* <a
         href={`mailto:${email}`}
         className="absolute top-6 left-6 inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors"
       >
         <Mail size={18} />
         <span className="font-medium text-sm hidden sm:inline">{email}</span>
-      </a>
+      </a> */}
 
       {/* Name centered */}
       <h1 className="absolute inset-0 flex items-center justify-center text-4xl lg:text-5xl font-bold text-white text-center px-4">
