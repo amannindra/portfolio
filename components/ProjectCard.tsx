@@ -8,6 +8,7 @@ interface ProjectCardProps {
   technologies: string[];
   link?: string;
   github?: string;
+  period?: string;
 }
 
 export default function ProjectCard({
@@ -16,6 +17,7 @@ export default function ProjectCard({
   technologies,
   link,
   github,
+  period,
 }: ProjectCardProps) {
   return (
     <div className="group relative p-6 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700 flex flex-col h-full">
@@ -23,9 +25,16 @@ export default function ProjectCard({
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-violet-600 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
 
       <div className="relative flex-1 flex flex-col">
-        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
-          {title}
-        </h3>
+        <div className="flex justify-between items-start mb-3">
+          <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+            {title}
+          </h3>
+          {period && (
+            <span className="text-sm text-slate-500 dark:text-slate-400 font-medium">
+              {period}
+            </span>
+          )}
+        </div>
 
         <p className="text-slate-600 dark:text-slate-300 mb-4 flex-1">
           {description}

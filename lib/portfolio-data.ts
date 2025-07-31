@@ -12,33 +12,104 @@ export const portfolioData = {
 
   // About Section
   about:
-    "I am a Computer Science and Engineering major at UC Merced, specializing in web development and machine learning. Passionate about leveraging AI to address real-world challenges, I aspire to develop AI-related websites in areas such as healthcare, education, and social impact, where technology can enhance accessibility.",
+    "I am a Computer Science and Engineering major at UC Merced, specializing in full-stack development and machine learning. As a Project Manager for the Machine Learning Club and Social Media Manager at Hotpot.ai, I bring both technical expertise and leadership experience. I'm passionate about building AI-powered applications that solve real-world problems, from containerized web apps with GPT-4 integration to real-time computer vision systems. My work spans across modern web technologies like React and TypeScript, backend systems with Python and Flask, and machine learning frameworks including PyTorch and OpenCV. I thrive on creating innovative solutions that bridge the gap between cutting-edge AI research and practical, user-friendly applications.",
 
   // Experience
   experience: [
     {
       company: "Hotpot.ai",
-      position: "Social Media Intern • Online",
-      duration: "May 2024 - Present",
+      position: "Social Media Manager • Online",
+      duration: "June 2023 – Present",
       description:
-        "Managed the company's social media presence, with a focus on Twitter. Contributed to brand awareness and customer engagement. Increased sales by showcasing the capabilities of Hotpot AI's image generation tool.",
+        "Managed and curated content on Twitter and Reddit to boost user engagement. Conducted analysis on trending stocks to optimize social media strategy and increase viewer engagement. Experimented with various posting formats and times, identifying patterns that increased views significantly. Collaborated with a team to strategically integrate quotes and financial analysis, enhancing content quality.",
       skills: [
         "Social Media Marketing",
         "Content Creation",
-        "Brand Management",
+        "Data Analysis",
+        "Engagement Optimization",
+        "Team Collaboration",
       ],
     },
   ],
 
   // Skills
   skills: {
-    languages: ["HTML", "CSS", "JavaScript", "React", "Python", "Firebase"],
-    frameworks: ["React", "Next.js", "Express.js", "PyTorch"],
+    languages: [
+      "Python",
+      "JavaScript",
+      "HTML/CSS",
+      "TypeScript",
+      "Tailwind CSS",
+    ],
+    frameworks: [
+      "React",
+      "React Native",
+      "Node.js",
+      "Flask",
+      "Firebase",
+      "Tailwind",
+      "PyTorch",
+      "OpenCV",
+      "Jupyter Notebook",
+    ],
     tools: ["Git", "GitHub", "Google Services", "Google API", "AWS", "Docker"],
+    certifications: [
+      "Facial Classification with PyTorch",
+      "Certified Entry-Level JavaScript Programmer",
+      "Introduction to Computer Vision and Image Processing",
+    ],
+    leadership: ["Project Manager for Machine Learning Club"],
   },
 
   // Projects
   projects: [
+    {
+      title: "AI-Resume",
+      description:
+        "Built a containerised full-stack web app that reviews résumés with GPT-4 and returns concise, structured feedback plus matching job listings. Features a RESTful Flask backend that converts PDFs to text, queries OpenAI for analysis, and exposes secured endpoints. Automated job-listing refresh via APScheduler with Apify crawler integration.",
+      technologies: [
+        "Python",
+        "Flask",
+        "React.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Firebase",
+        "Docker",
+      ],
+      github: "https://github.com/amannindra/AI-Resume",
+      period: "June 2025 – Present",
+    },
+    {
+      title: "ASL Voice Assistant",
+      description:
+        "Built an interactive web demo that recognises American Sign Language (A–Z) and carries on a real-time, voice-enabled conversation whose tone adapts to the user's detected emotions. Trained a CNN in PyTorch, exported to ONNX, achieving >90 FPS on desktop. Integrated Hume AI for emotion detection and Vapi for full-duplex voice communication.",
+      technologies: [
+        "Convolutional Neural Networks",
+        "Next.js",
+        "Tailwind CSS",
+        "PyTorch",
+        "ONNX",
+        "Hume AI",
+        "Vapi",
+      ],
+      period: "June 2025",
+    },
+    {
+      title: "Realtime Image Classifier",
+      description:
+        "Fine-tuned a ResNet-18 on the Kaggle Cats Dogs dataset, reaching 98.6% validation accuracy after a single epoch using Cyclic Learning Rate scheduling and data-augmentation. Built a real-time webcam demo with OpenCV that overlays live predictions at 30 FPS. Packaged in reproducible Jupyter notebooks.",
+      technologies: [
+        "Python",
+        "PyTorch",
+        "CNN",
+        "TorchVision",
+        "OpenCV",
+        "CUDA",
+        "Jupyter",
+      ],
+      github: "https://github.com/amannindra/catvsdog",
+      period: "June 2025",
+    },
     {
       title: "EdTok Learning Platform",
       description:

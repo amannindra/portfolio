@@ -45,7 +45,6 @@ export default function Navigation({
       {/*  Top bar  */}
       <nav className="flex items-center justify-center  px-5 py-4 backdrop-blur-md dark:bg-slate-900/70 lg:px-10">
         {/*  Brand / Logo placeholder  */}
-       
 
         {/*  Desktop links  */}
         <ul className="hidden gap-10 lg:flex">
