@@ -126,13 +126,13 @@ export const portfolioData = {
       link: "https://aichatbot.example.com",
       github: "https://github.com/amannindra/ai-chatbot",
     },
-    {
-      title: "TensorFlow Photo Categorization",
-      description:
-        "Developed a website and AI model that allows donors to upload photos of donation items. The AI uses TensorFlow and integrated into the backend, automatically detects and categorizes items, simplifying inventory sorting for organizations.",
-      technologies: ["Python", "TensorFlow", "React", "Firebase"],
-      github: "https://github.com/amannindra/photo-categorization",
-    },
+    // {
+    //   title: "TensorFlow Photo Categorization",
+    //   description:
+    //     "Developed a website and AI model that allows donors to upload photos of donation items. The AI uses TensorFlow and integrated into the backend, automatically detects and categorizes items, simplifying inventory sorting for organizations.",
+    //   technologies: ["Python", "TensorFlow", "React", "Firebase"],
+    //   github: "https://github.com/amannindra/photo-categorization",
+    // },
   ],
 
   // Education
