@@ -1,9 +1,9 @@
 "use client";
 
-import { Calendar, Building2, Code2, ExternalLink } from "lucide-react";
-import SkillBadge from "./SkillBadge";
+import { ExternalLink } from "lucide-react";
 import ExperienceCard from "./ExperienceCard";
 import ProjectCard from "./ProjectCard";
+import SkillCategoryCard from "./SkillCategoryCard";
 
 interface ContentSectionProps {
   about: string;
@@ -67,64 +67,35 @@ export default function ContentSection({
           Technical Skills
         </h2>
 
-        <div className="space-y-6">
-          <div>
-            <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-              Programming Languages
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {skills.languages.map((skill) => (
-                <SkillBadge key={skill} skill={skill} type="language" />
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-              Frameworks & Libraries
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {skills.frameworks.map((skill) => (
-                <SkillBadge key={skill} skill={skill} type="framework" />
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-              Tools & Technologies
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {skills.tools.map((skill) => (
-                <SkillBadge key={skill} skill={skill} type="tool" />
-              ))}
-            </div>
-          </div>
-
+        <div className="grid gap-6 md:grid-cols-2">
+          <SkillCategoryCard
+            title="Programming Languages"
+            skills={skills.languages}
+            type="language"
+          />
+          <SkillCategoryCard
+            title="Frameworks & Libraries"
+            skills={skills.frameworks}
+            type="framework"
+          />
+          <SkillCategoryCard
+            title="Tools & Technologies"
+            skills={skills.tools}
+            type="tool"
+          />
           {skills.certifications && skills.certifications.length > 0 && (
-            <div>
-              <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-                Certifications
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.certifications.map((cert) => (
-                  <SkillBadge key={cert} skill={cert} type="framework" />
-                ))}
-              </div>
-            </div>
+            <SkillCategoryCard
+              title="Certifications"
+              skills={skills.certifications}
+              type="framework"
+            />
           )}
-
           {skills.leadership && skills.leadership.length > 0 && (
-            <div>
-              <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-                Leadership & Roles
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.leadership.map((role) => (
-                  <SkillBadge key={role} skill={role} type="tool" />
-                ))}
-              </div>
-            </div>
+            <SkillCategoryCard
+              title="Leadership & Roles"
+              skills={skills.leadership}
+              type="tool"
+            />
           )}
         </div>
       </section>
@@ -133,7 +104,7 @@ export default function ContentSection({
       {projects && projects.length > 0 && (
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
-            <div className="h-1 w-12 bg-gradient-to-r from-blue-600 to-violet-600 rounded-full"></div>
+            {/* <div className="h-1 w-12 bg-gradient-to-r from-blue-600 to-violet-600 rounded-full"></div> */}
             Projects
           </h2>
           <div className="grid gap-6 md:grid-cols-2">
@@ -147,13 +118,13 @@ export default function ContentSection({
       {/* Contact Section */}
       <section className="mb-16">
         <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
-          <div className="h-1 w-12 bg-gradient-to-r from-blue-600 to-violet-600 rounded-full"></div>
+          {/* <div className="h-1 w-12 bg-gradient-to-r from-blue-600 to-violet-600 rounded-full"></div> */}
           Get In Touch
         </h2>
         <div className="text-center mb-8">
           <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-            I'm always interested in new opportunities and collaborations. Feel
-            free to reach out if you'd like to work together!
+            I&apos;m always interested in new opportunities and collaborations.
+            Feel free to reach out if you&apos;d like to work together!
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">

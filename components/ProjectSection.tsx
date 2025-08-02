@@ -2,6 +2,15 @@
 
 import { portfolioData } from "@/lib/portfolio-data";
 
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  period?: string;
+  github?: string;
+  link?: string;
+}
+
 export default function ProjectSection() {
   return (
     <div className="p-8 lg:p-16 max-w-4xl mx-auto">
@@ -10,7 +19,7 @@ export default function ProjectSection() {
         Projects
       </h2>
       <div className="grid gap-6 md:grid-cols-2">
-        {portfolioData.projects.map((project, index) => (
+        {(portfolioData.projects as Project[]).map((project, index) => (
           <div
             key={index}
             className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md"
