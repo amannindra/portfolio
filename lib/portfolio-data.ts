@@ -71,7 +71,6 @@ export const portfolioData = {
         "Jupyter",
       ],
       github: "https://github.com/amannindra/catvsdog",
-      period: "June 2025",
     },
     {
       title: "AI-Resume",
@@ -87,7 +86,6 @@ export const portfolioData = {
         "Docker",
       ],
       // github: "https://github.com/amannindra/AI-Resume",
-      period: "June 2025 – Present",
     },
     {
       title: "ASL Voice Assistant",
@@ -102,7 +100,6 @@ export const portfolioData = {
         "Hume AI",
         "Vapi",
       ],
-      period: "June 2025",
     },
 
     {
@@ -120,7 +117,7 @@ export const portfolioData = {
       technologies: ["React", "Firebase", "LLM Models", "Node.js"],
       // link: "https://aichatbot.example.com",
       // github: "https://github.com/amannindra/ai-chatbot",
-    }
+    },
   ],
 
   // Education
