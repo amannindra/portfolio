@@ -133,7 +133,7 @@ export default function ContentSection({
       {projects && projects.length > 0 && (
         <section className="mb-16">
           <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
-            <div className="h-1 w-12 bg-gradient-to-r from-blue-600 to-violet-600 rounded-full"></div>
+            {/* <div className="h-1 w-12 bg-gradient-to-r from-blue-600 to-violet-600 rounded-full"></div> */}
             Projects
           </h2>
           <div className="grid gap-6 md:grid-cols-2">
