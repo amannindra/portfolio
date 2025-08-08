@@ -117,17 +117,10 @@ export const portfolioData = {
       title: "AI Chatbot",
       description:
         "Building a free website where users can interact with multiple LLMs, including GPT-4, Claude 3.0, Meta AI, and Gemini. User data is securely stored via Firebase. The platform is funded through Google Ads.",
-      technologies: ["React", "Firebase", "TensorFlow", "Node.js"],
+      technologies: ["React", "Firebase", "LLM Models", "Node.js"],
       // link: "https://aichatbot.example.com",
       // github: "https://github.com/amannindra/ai-chatbot",
-    },
-    {
-      title: "TensorFlow Photo Categorization",
-      description:
-        "Developed a website and AI model that allows donors to upload photos of donation items. The AI uses TensorFlow, is integrated into the backend, and automatically detects and categorizes items, simplifying inventory sorting for organizations.",
-      technologies: ["Python", "TensorFlow", "React", "Firebase"],
-      // github: "https://github.com/amannindra/photo-categorization",
-    },
+    }
   ],
 
   // Education
