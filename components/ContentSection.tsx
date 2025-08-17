@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Link } from "lucide-react";
 import SkillBadge from "./SkillBadge";
 import ExperienceCard from "./ExperienceCard";
 import ProjectCard from "./ProjectCard";
@@ -37,6 +37,8 @@ export default function ContentSection({
   skills,
   projects,
 }: ContentSectionProps) {
+
+
   return (
     <div className="p-8 lg:p-16 max-w-4xl mx-auto">
       {/* About Section */}
@@ -48,20 +50,6 @@ export default function ContentSection({
           {about}
         </p>
       </section>
-
-      {/* Experience Section */}
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
-          Professional Experience
-        </h2>
-        <div className="space-y-6">
-          {experience.map((exp, index) => (
-            <ExperienceCard key={index} {...exp} />
-          ))}
-        </div>
-      </section>
-
-      {/* Skills Section */}
       <section className="mb-16">
         <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
           Technical Skills
@@ -128,6 +116,19 @@ export default function ContentSection({
           )}
         </div>
       </section>
+      {/* Experience Section */}
+      <section className="mb-16">
+        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+          Professional Experience
+        </h2>
+        <div className="space-y-6">
+          {experience.map((exp, index) => (
+            <ExperienceCard key={index} {...exp} />
+          ))}
+        </div>
+      </section>
+
+      {/* Skills Section */}
 
       {/* Projects Section */}
       {projects && projects.length > 0 && (
@@ -156,31 +157,42 @@ export default function ContentSection({
             Feel free to reach out if you&apos;d like to work together!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="mailto:amannindra@gmail.com"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+            <div
+              className="group relative p-6 bg-blue dark:bg-slate-800 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700 flex h-full pointer-events-auto"
+              onClick={() => {
+                // console.log("clicked");
+                window.open(
+                  "https://www.linkedin.com/in/aman-nindra-1b3634270/"
+                );
+              }}
             >
-              <ExternalLink size={18} className="mr-2" />
-              Send Email
-            </a>
-            <a
-              href="https://www.linkedin.com/in/aman-nindra-1b3634270/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 font-medium rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-            >
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-violet-600 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
               <ExternalLink size={18} className="mr-2" />
               LinkedIn
-            </a>
-            <a
-              href="https://github.com/amannindra"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 font-medium rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+            </div>
+
+            <div
+              className="group relative p-6 bg-blue dark:bg-slate-800 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700 flex h-full pointer-events-auto"
+              onClick={() => {
+                // console.log("clicked");
+                window.open("https://github.com/amannindra");
+              }}
             >
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-violet-600 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
               <ExternalLink size={18} className="mr-2" />
               GitHub
-            </a>
+            </div>
+            <div
+              className="group relative p-6 bg-blue dark:bg-slate-800 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700 flex h-full"
+              onClick={(e) => {
+                window.location.href = "mailto:amannindra@gmail.com";
+                e.preventDefault();
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-violet-600 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+              <ExternalLink size={18} className="mr-2" />
+              Send Email
+            </div>
           </div>
         </div>
       </section>

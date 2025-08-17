@@ -21,7 +21,6 @@ export default function ExperienceCard({
     <div className="group relative p-6 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700">
       {/* Gradient border on hover */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-violet-600 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-
       <div className="relative">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
           <div>

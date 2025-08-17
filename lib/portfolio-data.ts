@@ -70,7 +70,7 @@ export const portfolioData = {
         "CUDA",
         "Jupyter",
       ],
-      github: "https://github.com/amannindra/catvsdog",
+      github: "https://github.com/amannindra/CatvsDog_pytorch",
     },
     {
       title: "AI-Resume",
