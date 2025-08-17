@@ -121,8 +121,8 @@ export default function ContentSection({
           {/* <div className="h-1 w-12 bg-gradient-to-r from-blue-600 to-violet-600 rounded-full"></div> */}
           Get In Touch
         </h2>
-        <div className="text-center mb-8">
-          <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+        <div className="text-center">
+          <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
             I&apos;m always interested in new opportunities and collaborations.
             Feel free to reach out if you&apos;d like to work together!
           </p>

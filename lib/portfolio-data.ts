@@ -34,25 +34,19 @@ export const portfolioData = {
 
   // Skills
   skills: {
-    languages: [
-      "Python",
-      "JavaScript",
-      "HTML/CSS",
-      "TypeScript",
-      "Tailwind CSS",
-    ],
+    languages: ["Python", "JavaScript", "HTML/CSS", "TypeScript"],
     frameworks: [
       "React",
       "React Native",
       "Node.js",
       "Flask",
       "Firebase",
-      "Tailwind",
+      "Tailwind CSS",
       "PyTorch",
       "OpenCV",
       "Jupyter Notebook",
     ],
-    tools: ["Git", "GitHub", "Google Services", "Google API", "AWS", "Docker"],
+    tools: ["Git", "GitHub", "Google Cloud", "Docker"],
     certifications: [
       "Facial Classification with PyTorch",
       "Certified Entry-Level JavaScript Programmer",
@@ -63,6 +57,21 @@ export const portfolioData = {
 
   // Projects
   projects: [
+    {
+      title: "Real-time Image Classifier",
+      description:
+        "Fine-tuned a ResNet-18 on the Kaggle Cats vs Dogs dataset, reaching 98.6% validation accuracy after a single epoch using Cyclic Learning Rate scheduling and data augmentation. Built a real-time webcam demo with OpenCV that overlays live predictions at 30 FPS. Packaged in reproducible Jupyter notebooks.",
+      technologies: [
+        "Python",
+        "PyTorch",
+        "CNN",
+        "TorchVision",
+        "OpenCV",
+        "CUDA",
+        "Jupyter",
+      ],
+      github: "https://github.com/amannindra/catvsdog",
+    },
     {
       title: "Realtime Image Classifier",
       description:
@@ -82,25 +91,23 @@ export const portfolioData = {
     {
       title: "AI-Resume",
       description:
-        "Built a containerised full-stack web app that reviews résumés with GPT-4 and returns concise, structured feedback plus matching job listings. Features a RESTful Flask backend that converts PDFs to text, queries OpenAI for analysis, and exposes secured endpoints. Automated job-listing refresh via APScheduler with Apify crawler integration.",
+        "Built a containerized full-stack web app that reviews résumés with GPT-4 and returns concise, structured feedback plus matching job listings. Features a RESTful Flask backend that converts PDFs to text, queries OpenAI for analysis, and exposes secured endpoints. Automated job-listing refresh via APScheduler with Apify crawler integration.",
       technologies: [
         "Python",
         "Flask",
-        "React.js",
+        "React",
         "TypeScript",
         "Tailwind CSS",
         "Firebase",
         "Docker",
       ],
-      // github: "https://github.com/amannindra/AI-Resume",
-      period: "June 2025 – Present",
     },
     {
       title: "ASL Voice Assistant",
       description:
-        "Built an interactive web demo that recognises American Sign Language (A–Z) and carries on a real-time, voice-enabled conversation whose tone adapts to the user's detected emotions. Trained a CNN in PyTorch, exported to ONNX, achieving >90 FPS on desktop. Integrated Hume AI for emotion detection and Vapi for full-duplex voice communication.",
+        "Built an interactive web demo that recognizes American Sign Language (A–Z) and carries on a real-time, voice-enabled conversation whose tone adapts to the user's detected emotions. Trained a Convolutional Neural Network (CNN) in PyTorch, exported to ONNX, achieving >90 FPS on desktop. Integrated Hume AI for emotion detection and Vapi for full-duplex voice communication.",
       technologies: [
-        "Convolutional Neural Networks",
+        "CNN",
         "Next.js",
         "Tailwind CSS",
         "PyTorch",
@@ -108,32 +115,22 @@ export const portfolioData = {
         "Hume AI",
         "Vapi",
       ],
-      period: "June 2025",
     },
+
 
     {
       title: "EdTok Learning Platform",
       description:
-        "Created the Frontend of EdTok, a platform designed to transform student learning through short-form content and quizzes. EdTok allows teachers to upload educational videos organized by classes, subjects, and chapters, followed by quizzes to test student understanding.",
+        "Created the frontend of EdTok, a platform designed to transform student learning through short-form content and quizzes. EdTok allows teachers to upload educational videos organized by classes, subjects, and chapters, followed by quizzes to test student understanding.",
       technologies: ["HTML", "CSS", "JavaScript", "React"],
-      // link: "https://edtok.example.com",
-      // github: "https://github.com/amannindra/edtok",
     },
     {
       title: "AI Chatbot",
       description:
         "Building a free website where users can interact with multiple LLMs, including GPT-4, Claude 3.0, Meta AI, and Gemini. User data is securely stored via Firebase. The platform is funded through Google Ads.",
-      technologies: ["React", "Firebase", "TensorFlow", "Node.js"],
-      // link: "https://aichatbot.example.com",
-      // github: "https://github.com/amannindra/ai-chatbot",
+      technologies: ["React", "Firebase", "LLM Models", "Node.js"],
     },
-    // {
-    //   title: "TensorFlow Photo Categorization",
-    //   description:
-    //     "Developed a website and AI model that allows donors to upload photos of donation items. The AI uses TensorFlow and integrated into the backend, automatically detects and categorizes items, simplifying inventory sorting for organizations.",
-    //   technologies: ["Python", "TensorFlow", "React", "Firebase"],
-    //   github: "https://github.com/amannindra/photo-categorization",
-    // },
+
   ],
 
   // Education
