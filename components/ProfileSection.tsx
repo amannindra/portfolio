@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Mail, Linkedin, Github } from "lucide-react";
+import { Linkedin, Github } from "lucide-react";
 
 interface ProfileSectionProps {
   name: string;
@@ -15,7 +15,7 @@ interface ProfileSectionProps {
 
 export default function ProfileSection({
   name,
-  email,
+  // email,
   profileImage = "/profile.jpg",
   linkedinUrl,
   githubUrl,

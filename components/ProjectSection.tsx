@@ -2,7 +2,16 @@
 
 import { portfolioData } from "@/lib/portfolio-data";
 
+type Project = {
+  title: string;
+  description: string;
+  technologies: string[];
+  github?: string;
+  link?: string;
+};
+
 export default function ProjectSection() {
+  const projects = portfolioData.projects as Project[];
   return (
     <div className="p-8 lg:p-16 max-w-4xl mx-auto">
       <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
@@ -10,7 +19,7 @@ export default function ProjectSection() {
         Projects
       </h2>
       <div className="grid gap-6 md:grid-cols-2">
-        {portfolioData.projects.map((project, index) => (
+        {projects.map((project, index) => (
           <div
             key={index}
             className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md"
@@ -42,7 +51,7 @@ export default function ProjectSection() {
                   GitHub
                 </a>
               )}
-              {project.link && (
+              {project.link ? (
                 <a
                   href={project.link}
                   target="_blank"
@@ -51,7 +60,7 @@ export default function ProjectSection() {
                 >
                   Live Demo
                 </a>
-              )}
+              ) : null}
             </div>
           </div>
         ))}

@@ -1,6 +1,6 @@
 "use client";
 
-import { Calendar, Building2, Code2, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import SkillBadge from "./SkillBadge";
 import ExperienceCard from "./ExperienceCard";
 import ProjectCard from "./ProjectCard";
@@ -152,8 +152,8 @@ export default function ContentSection({
         </h2>
         <div className="text-center">
           <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
-            I'm always interested in new opportunities and collaborations. Feel
-            free to reach out if you'd like to work together!
+            I&apos;m always interested in new opportunities and collaborations.
+            Feel free to reach out if you&apos;d like to work together!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
