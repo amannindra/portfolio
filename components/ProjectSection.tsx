@@ -10,6 +10,7 @@ type Project = {
   link?: string;
 };
 
+
 export default function ProjectSection() {
   const projects = portfolioData.projects as Project[];
   return (
@@ -20,6 +21,7 @@ export default function ProjectSection() {
       </h2>
       <div className="grid gap-6 md:grid-cols-2">
         {projects.map((project, index) => (
+
           <div
             key={index}
             className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-md"

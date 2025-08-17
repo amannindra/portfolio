@@ -1,9 +1,10 @@
 "use client";
 
 import { ExternalLink } from "lucide-react";
-import SkillBadge from "./SkillBadge";
+import SkillBadge from "./SkillBadge"
 import ExperienceCard from "./ExperienceCard";
 import ProjectCard from "./ProjectCard";
+import SkillCategoryCard from "./SkillCategoryCard";
 
 interface ContentSectionProps {
   about: string;
@@ -67,64 +68,35 @@ export default function ContentSection({
           Technical Skills
         </h2>
 
-        <div className="space-y-6">
-          <div>
-            <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-              Programming Languages
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {skills.languages.map((skill) => (
-                <SkillBadge key={skill} skill={skill} type="language" />
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-              Frameworks & Libraries
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {skills.frameworks.map((skill) => (
-                <SkillBadge key={skill} skill={skill} type="framework" />
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-              Tools & Technologies
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {skills.tools.map((skill) => (
-                <SkillBadge key={skill} skill={skill} type="tool" />
-              ))}
-            </div>
-          </div>
-
+        <div className="grid gap-6 md:grid-cols-2">
+          <SkillCategoryCard
+            title="Programming Languages"
+            skills={skills.languages}
+            type="language"
+          />
+          <SkillCategoryCard
+            title="Frameworks & Libraries"
+            skills={skills.frameworks}
+            type="framework"
+          />
+          <SkillCategoryCard
+            title="Tools & Technologies"
+            skills={skills.tools}
+            type="tool"
+          />
           {skills.certifications && skills.certifications.length > 0 && (
-            <div>
-              <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-                Certifications
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.certifications.map((cert) => (
-                  <SkillBadge key={cert} skill={cert} type="framework" />
-                ))}
-              </div>
-            </div>
+            <SkillCategoryCard
+              title="Certifications"
+              skills={skills.certifications}
+              type="framework"
+            />
           )}
-
           {skills.leadership && skills.leadership.length > 0 && (
-            <div>
-              <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-                Leadership & Roles
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {skills.leadership.map((role) => (
-                  <SkillBadge key={role} skill={role} type="tool" />
-                ))}
-              </div>
-            </div>
+            <SkillCategoryCard
+              title="Leadership & Roles"
+              skills={skills.leadership}
+              type="tool"
+            />
           )}
         </div>
       </section>
@@ -152,36 +124,96 @@ export default function ContentSection({
         </h2>
         <div className="text-center">
           <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
+
             I&apos;m always interested in new opportunities and collaborations.
             Feel free to reach out if you&apos;d like to work together!
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="mailto:amannindra@gmail.com"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
-            >
-              <ExternalLink size={18} className="mr-2" />
-              Send Email
-            </a>
-            <a
-              href="https://www.linkedin.com/in/aman-nindra-1b3634270/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 font-medium rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-            >
-              <ExternalLink size={18} className="mr-2" />
-              LinkedIn
-            </a>
-            <a
-              href="https://github.com/amannindra"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 font-medium rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
-            >
-              <ExternalLink size={18} className="mr-2" />
-              GitHub
-            </a>
-          </div>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {/* Email Card */}
+          <a
+            href="mailto:amannindra@gmail.com"
+            className="group relative p-6 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700 block"
+          >
+            {/* Gradient border on hover */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-violet-600 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+
+            <div className="relative text-center">
+              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 dark:group-hover:bg-blue-900/50 transition-colors duration-300">
+                <ExternalLink
+                  size={24}
+                  className="text-blue-600 dark:text-blue-400"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                Email
+              </h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm mb-2">
+                Send me a message
+              </p>
+              <p className="text-blue-600 dark:text-blue-400 font-medium">
+                amannindra@gmail.com
+              </p>
+            </div>
+          </a>
+
+          {/* LinkedIn Card */}
+          <a
+            href="https://www.linkedin.com/in/aman-nindra-1b3634270/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative p-6 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700 block"
+          >
+            {/* Gradient border on hover */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-violet-600 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+
+            <div className="relative text-center">
+              <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 dark:group-hover:bg-purple-900/50 transition-colors duration-300">
+                <ExternalLink
+                  size={24}
+                  className="text-purple-600 dark:text-purple-400"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                LinkedIn
+              </h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm mb-2">
+                Professional network
+              </p>
+              <p className="text-purple-600 dark:text-purple-400 font-medium">
+                Connect with me
+              </p>
+            </div>
+          </a>
+
+          {/* GitHub Card */}
+          <a
+            href="https://github.com/amannindra"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative p-6 bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700 block"
+          >
+            {/* Gradient border on hover */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-violet-600 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+
+            <div className="relative text-center">
+              <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 dark:group-hover:bg-green-900/50 transition-colors duration-300">
+                <ExternalLink
+                  size={24}
+                  className="text-green-600 dark:text-green-400"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                GitHub
+              </h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm mb-2">
+                Code repositories
+              </p>
+              <p className="text-green-600 dark:text-green-400 font-medium">
+                View my projects
+              </p>
+            </div>
+          </a>
         </div>
       </section>
     </div>
