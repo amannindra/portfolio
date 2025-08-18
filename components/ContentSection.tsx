@@ -146,9 +146,9 @@ export default function ContentSection({
       )}
 
       {/* Contact Section */}
-      <section className="mb-16">
+      
+      {/* <section className="mb-16">
         <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
-          {/* <div className="h-1 w-12 bg-gradient-to-r from-blue-600 to-violet-600 rounded-full"></div> */}
           Get In Touch
         </h2>
         <div className="text-center">
@@ -174,7 +174,6 @@ export default function ContentSection({
             <div
               className="group relative p-6 bg-blue dark:bg-slate-800 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700 flex h-full pointer-events-auto"
               onClick={() => {
-                // console.log("clicked");
                 window.open("https://github.com/amannindra");
               }}
             >
@@ -195,7 +194,7 @@ export default function ContentSection({
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
