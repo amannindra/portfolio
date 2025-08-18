@@ -146,8 +146,8 @@ export default function ContentSection({
       )}
 
       {/* Contact Section */}
-      
-      {/* <section className="mb-16">
+
+      <section className="mb-16">
         <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
           Get In Touch
         </h2>
@@ -194,7 +194,7 @@ export default function ContentSection({
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
     </div>
   );
 }
