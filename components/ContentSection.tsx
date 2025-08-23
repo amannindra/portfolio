@@ -4,6 +4,7 @@ import { ExternalLink, Link } from "lucide-react";
 import SkillBadge from "./SkillBadge";
 import ExperienceCard from "./ExperienceCard";
 import ProjectCard from "./ProjectCard";
+import ResumeSection from "@/components/ResumeSection";
 
 interface ContentSectionProps {
   about: string;
@@ -37,8 +38,6 @@ export default function ContentSection({
   skills,
   projects,
 }: ContentSectionProps) {
-
-
   return (
     <div className="p-8 lg:p-16 max-w-4xl mx-auto">
       {/* About Section */}
@@ -144,6 +143,9 @@ export default function ContentSection({
           </div>
         </section>
       )}
+
+      {/* Resume Section */}
+      <ResumeSection />
 
       {/* Contact Section */}
 
