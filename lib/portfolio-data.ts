@@ -12,10 +12,25 @@ export const portfolioData = {
 
   // About Section
   about:
-    "I am a Computer Science and Engineering major at UC Merced, specializing in full-stack development and machine learning. As a Project Manager for the Machine Learning Club and Social Media Manager at Hotpot.ai, I bring both technical expertise and leadership experience. I'm passionate about building AI-powered applications that solve real-world problems, from containerized web apps with GPT-4 integration to real-time computer vision systems. My work spans across modern web technologies like React and TypeScript, backend systems with Python and Flask, and machine learning frameworks including PyTorch and OpenCV. I thrive on creating innovative solutions that bridge the gap between cutting-edge AI research and practical, user-friendly applications.",
+    "I am a Computer Science and Engineering major at UC Merced, specializing in full-stack development, mobile development, and machine learning. Currently serving as a Software Engineering Intern at Arrowz, a mental health startup, where I develop cross-platform mobile applications using Flutter/Dart. As a Project Manager for the Machine Learning Club and Social Media Manager at Hotpot.ai, I bring both technical expertise and leadership experience. I'm passionate about building AI-powered applications and mobile solutions that solve real-world problems, from containerised web apps with GPT-4 integration to real-time computer vision systems achieving >90 FPS performance. My experience spans modern web technologies like React and TypeScript, mobile development with Flutter, backend systems with Python and Flask, and cutting-edge machine learning frameworks including PyTorch and OpenCV. I excel at creating innovative solutions that bridge AI research with practical, user-friendly applications, while maintaining focus on performance optimization and seamless user experiences.",
 
   // Experience
   experience: [
+    {
+      company: "Arrowz (Mental Health Startup)",
+      position: "Software Engineering Intern • Remote",
+      duration: "September 2025 – Present",
+      description:
+        "Developed cross-platform mobile application using Flutter/Dart for emotion tracking and mental wellness, implementing complex UI components and state management across 25+ screens. Engineered reusable UI components including dynamic menu drawers, custom app bars, and responsive layouts, ensuring consistent design patterns and reducing code duplication by 40%.",
+      skills: [
+        "Flutter/Dart",
+        "Cross-platform Development",
+        "State Management",
+        "UI/UX Design",
+        "Mobile Development",
+        "Code Optimization",
+      ],
+    },
     {
       company: "Hotpot.ai",
       position: "Social Media Manager • Online",
@@ -34,23 +49,38 @@ export const portfolioData = {
 
   // Skills
   skills: {
-    languages: ["Python", "JavaScript", "HTML/CSS", "TypeScript"],
+    languages: [
+      "Python",
+      "JavaScript",
+      "TypeScript",
+      "Dart",
+      "HTML/CSS",
+      "C++",
+    ],
     frameworks: [
+      "Flutter",
       "React",
       "React Native",
       "Node.js",
       "Flask",
       "Firebase",
-      "Tailwind CSS",
       "PyTorch",
       "OpenCV",
-      "Jupyter Notebook",
+    ],
+    mobileAndDatabase: [
+      "Flutter SDK",
+      "Isar Database",
+      "Firebase Auth",
+      "State Management",
+      "Cross-platform Development",
     ],
     tools: ["Git", "GitHub", "Google Cloud", "Docker"],
     certifications: [
-      "Facial Classification with PyTorch",
-      "Certified Entry-Level JavaScript Programmer",
-      "Introduction to Computer Vision and Image Processing",
+      "Getting Started with Flutter & Dart",
+      "Introduction to Selenium",
+      "Computer Vision and Image Processing Essentials",
+      "Facial Expression Recognition with PyTorch",
+      "JSE – Certified Entry-Level JavaScript Programmer - OpenEDG",
     ],
     leadership: ["Project Manager for Machine Learning Club"],
   },
@@ -58,9 +88,31 @@ export const portfolioData = {
   // Projects
   projects: [
     {
-      title: "Real-time Image Classifier",
+      title: "AI-Resume",
       description:
-        "Fine-tuned a ResNet-18 on the Kaggle Cats vs Dogs dataset, reaching 98.6% validation accuracy after a single epoch using Cyclic Learning Rate scheduling and data augmentation. Built a real-time webcam demo with OpenCV that overlays live predictions at 30 FPS. Packaged in reproducible Jupyter notebooks.",
+        "Built a containerised full-stack web app that reviews résumés with GPT-4 and returns concise, structured feedback plus matching job listings. Designed a RESTful Flask backend that (i) converts PDFs to text with pdfminer / pdf2image, (ii) queries OpenAI for analysis, (iii) exposes upload and health endpoints secured by CORS. Automated job-listing refresh via APScheduler: every 10 min an Apify crawler scrapes new postings; results are pushed to Firebase Realtime Database for instant UI updates. Developed a responsive React + TypeScript front-end (Vite, Tailwind CSS) that lets users upload résumés, view AI feedback, and browse fresh job matches.",
+      technologies: ["Python", "Flask", "React.js", "Tailwind CSS", "Firebase"],
+      dateRange: "June 2025 – Present",
+      // github: "https://github.com/amannindra/AI-Resume",
+    },
+    {
+      title: "ASL Voice Assistant",
+      description:
+        "Built an interactive web demo that recognises American Sign Language (A–Z) and carries on a real-time, voice-enabled conversation whose tone adapts to the user's detected emotions. Trained a CNN in PyTorch, exported to ONNX, and ran inference client-side with onnxruntime-web—achieving >90 FPS on desktop without server calls. Streamed webcam frames to Hume AI to extract top-3 emotions every second; injected the results into prompts so the assistant replies empathetically. Leveraged Vapi for full-duplex voice: instant transcription, GPT-4 response delivery, and low-latency TTS playback, all within the browser. Designed a modern UI in Next.js (App Router) with Tailwind CSS and Radix primitives; added animated subtitle track and pulsing voice orb for accessibility.",
+      technologies: [
+        "Convolutional Neural Networks",
+        "Next.js",
+        "Tailwind CSS",
+        "Python",
+        "PyTorch",
+        "onnxruntime",
+      ],
+      dateRange: "June 2025",
+    },
+    {
+      title: "Realtime Image Classifier",
+      description:
+        "Fine-tuned a ResNet-18on the Kaggle Cats Dogs dataset; reached 98.6% validation accuracy after a single epoch using Cyclic Learning Rate scheduling and data-augmentation. Built a real-time webcam demo—OpenCV streams video frames to a TorchVision preprocessing pipeline and overlays live 'cat'/'dog' predictions at 30 FPS. Packaged reproducible workflows in Jupyter notebooks (catvsdogResnet18.ipynb for training, runcamera.ipynb for live testing) and exported model weights to model.pt for effortless reuse. Published installation script (requirements.txt) enabling one-command setup with torch, torchvision, opencv-python, Pillow, NumPy, Matplotlib, and tqdm.",
       technologies: [
         "Python",
         "PyTorch",
@@ -70,36 +122,8 @@ export const portfolioData = {
         "CUDA",
         "Jupyter",
       ],
+      dateRange: "June 2025",
       github: "https://github.com/amannindra/CatvsDog_pytorch",
-    },
-    {
-      title: "AI-Resume",
-      description:
-        "Built a containerized full-stack web app that reviews résumés with GPT-4 and returns concise, structured feedback plus matching job listings. Features a RESTful Flask backend that converts PDFs to text, queries OpenAI for analysis, and exposes secured endpoints. Automated job-listing refresh via APScheduler with Apify crawler integration.",
-      technologies: [
-        "Python",
-        "Flask",
-        "React",
-        "TypeScript",
-        "Tailwind CSS",
-        "Firebase",
-        "Docker",
-      ],
-      // github: "https://github.com/amannindra/AI-Resume",
-    },
-    {
-      title: "ASL Voice Assistant",
-      description:
-        "Built an interactive web demo that recognizes American Sign Language (A–Z) and carries on a real-time, voice-enabled conversation whose tone adapts to the user's detected emotions. Trained a Convolutional Neural Network (CNN) in PyTorch, exported to ONNX, achieving >90 FPS on desktop. Integrated Hume AI for emotion detection and Vapi for full-duplex voice communication.",
-      technologies: [
-        "CNN",
-        "Next.js",
-        "Tailwind CSS",
-        "PyTorch",
-        "ONNX",
-        "Hume AI",
-        "Vapi",
-      ],
     },
 
     {
@@ -122,7 +146,7 @@ export const portfolioData = {
 
   // Education
   education: {
-    degree: "Bachelor of Engineering",
+    degree: "Bachelor of Science",
     major: "Computer Science and Engineering",
     school: "University of California, Merced",
     graduationYear: "2028",
