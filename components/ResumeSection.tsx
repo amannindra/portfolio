@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 
 export default function ResumeSection() {
-  const pdfPath = "/Aman_Nindra_Web.pdf";
+  const pdfPath = "/Aman_Nindra_Updated_Web.pdf";
 
   return (
     <section id="resume" className="mb-16">
