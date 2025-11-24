@@ -9,13 +9,16 @@ export default function SkillBadge({ skill, type }: SkillBadgeProps) {
   const getColorClasses = () => {
     switch (type) {
       case "language":
-        return "bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50";
+        // Violet/Purple (Primary Theme Color)
+        return "bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20";
       case "framework":
-        return "bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-900/50";
+        // Blue/Cyan
+        return "bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 hover:bg-blue-500/20";
       case "tool":
-        return "bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 hover:bg-green-200 dark:hover:bg-green-900/50";
+        // Emerald/Teal
+        return "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20";
       default:
-        return "bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-300";
+        return "bg-slate-500/10 text-slate-600 dark:text-slate-400 border border-slate-500/20";
     }
   };
 

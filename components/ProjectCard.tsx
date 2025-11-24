@@ -20,23 +20,23 @@ export default function ProjectCard({
   period,
 }: ProjectCardProps) {
   return (
-    <div className="group relative p-6 bg-blue dark:bg-slate-800 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-700 flex flex-col h-full">
+    <div className="group relative p-6 bg-card rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-border flex flex-col h-full">
       {/* Gradient border on hover */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-violet-600 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
 
       <div className="relative flex-1 flex flex-col">
         <div className="flex justify-between items-start mb-3">
-          <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+          <h3 className="text-xl font-bold text-card-foreground">
             {title}
           </h3>
           {period && (
-            <span className="text-sm text-slate-500 dark:text-slate-400 font-medium">
+            <span className="text-sm text-muted-foreground font-medium">
               {period}
             </span>
           )}
         </div>
 
-        <p className="text-slate-600 dark:text-slate-300 mb-4 flex-1">
+        <p className="text-muted-foreground mb-4 flex-1">
           {description}
         </p>
 
@@ -44,7 +44,7 @@ export default function ProjectCard({
           {technologies.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-md text-sm"
+              className="px-3 py-1 bg-secondary text-secondary-foreground rounded-md text-sm"
             >
               {tech}
             </span>
@@ -57,7 +57,7 @@ export default function ProjectCard({
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
             >
               <ExternalLink size={18} />
               <span className="text-sm font-medium">Live Demo</span>
@@ -68,7 +68,7 @@ export default function ProjectCard({
               href={github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
             >
               <Github size={18} />
               <span className="text-sm font-medium">Source Code</span>

@@ -90,8 +90,8 @@ export const portfolioData = {
       "Firebase",
       "AWS",
       "Vercel",
+      "Docker",
     ],
-    tools: ["Git", "GitHub", "Google Cloud", "Docker"], // Keeping tools as it might be useful, though not explicitly in new resume list
     certifications: [
       "Computer Vision and Image Processing",
       "Supervised Machine Learning: Regression and Classification",
@@ -154,6 +154,22 @@ export const portfolioData = {
         "Vercel",
       ],
       period: "Nov 2025",
+    },
+    {
+      title: "EdTok Learning Platform",
+      description:
+        "Created the frontend of EdTok, a platform designed to transform student learning through short-form content and quizzes. EdTok allows teachers to upload educational videos organized by classes, subjects, and chapters, followed by quizzes to test student understanding.",
+      technologies: ["HTML", "CSS", "JavaScript", "React"],
+      // link: "https://edtok.example.com",
+      // github: "https://github.com/amannindra/edtok",
+    },
+    {
+      title: "AI Chatbot",
+      description:
+        "Building a free website where users can interact with multiple LLMs, including GPT-4, Claude 3.0, Meta AI, and Gemini. User data is securely stored via Firebase. The platform is funded through Google Ads.",
+      technologies: ["React", "Firebase", "LLM Models", "Node.js"],
+      // link: "https://aichatbot.example.com",
+      // github: "https://github.com/amannindra/ai-chatbot",
     },
   ],
 
