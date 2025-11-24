@@ -12,37 +12,52 @@ export const portfolioData = {
 
   // About Section
   about:
-    "I am a Computer Science and Engineering major at UC Merced, specializing in full-stack development, mobile development, and machine learning. Currently serving as a Software Engineering Intern at Arrowz, a mental health startup, where I develop cross-platform mobile applications using Flutter/Dart. As a Project Manager for the Machine Learning Club and Social Media Manager at Hotpot.ai, I bring both technical expertise and leadership experience. I'm passionate about building AI-powered applications and mobile solutions that solve real-world problems, from containerised web apps with GPT-4 integration to real-time computer vision systems achieving >90 FPS performance. My experience spans modern web technologies like React and TypeScript, mobile development with Flutter, backend systems with Python and Flask, and cutting-edge machine learning frameworks including PyTorch and OpenCV. I excel at creating innovative solutions that bridge AI research with practical, user-friendly applications, while maintaining focus on performance optimization and seamless user experiences.",
+    "I am a Computer Science and Engineering major at UC Merced, specializing in full-stack development, mobile development, and machine learning. Currently serving as a Software Engineering Intern at Arrowz, a mental health startup, where I develop cross-platform mobile applications using Flutter/Dart. As a Project Manager for both the Machine Learning Club and Data Science Society Club, I lead teams building AI-powered tools like Code Companion and Research Copilot. I'm passionate about building AI-powered applications and mobile solutions that solve real-world problems, from containerized web apps with GPT-4 integration to real-time computer vision systems. My experience spans modern web technologies like React and TypeScript, mobile development with Flutter, backend systems with Python and Flask, and cutting-edge machine learning frameworks including PyTorch and OpenCV. I excel at creating innovative solutions that bridge AI research with practical, user-friendly applications, while maintaining focus on performance optimization and seamless user experiences.",
 
   // Experience
   experience: [
     {
       company: "Arrowz (Mental Health Startup)",
       position: "Software Engineering Intern • Remote",
-      duration: "September 2025 – Present",
+      duration: "Sep 2025 – Present",
       description:
-        "Developed cross-platform mobile application using Flutter/Dart for emotion tracking and mental wellness, implementing complex UI components and state management across 25+ screens. Engineered reusable UI components including dynamic menu drawers, custom app bars, and responsive layouts, ensuring consistent design patterns and reducing code duplication by 40%.",
+        "Shipped cross-platform Flutter/Dart app for emotion tracking across 25+ screens; modular UI components cut duplication 40%. Standardized state management and responsive layouts; improved build stability and developer velocity across the team.",
       skills: [
-        "Flutter/Dart",
+        "Flutter",
+        "Dart",
         "Cross-platform Development",
         "State Management",
         "UI/UX Design",
-        "Mobile Development",
-        "Code Optimization",
       ],
     },
     {
-      company: "Hotpot.ai",
-      position: "Social Media Manager • Online",
-      duration: "June 2023 – Present",
+      company: "UC Merced Machine Learning Club",
+      position: "Project Manager, Code Agent • Merced, CA",
+      duration: "Nov 2025 – Present",
       description:
-        "Managed and curated content on Twitter and Reddit to boost user engagement. Conducted analysis on trending stocks to optimize social media strategy and increase viewer engagement. Experimented with various posting formats and times, identifying patterns that increased views significantly. Collaborated with a team to strategically integrate quotes and financial analysis, enhancing content quality.",
+        "Scoped and led Code Companion, an AI-powered Python debugging tool that ingests GitHub repos, runs flake8/mypy, and suggests LLM-generated fixes with explanations. Defined MVP, metrics, and phased roadmap for Next.js + FastAPI + pgvector stack, coordinating backend and frontend milestones with the team.",
       skills: [
-        "Social Media Marketing",
-        "Content Creation",
-        "Data Analysis",
-        "Engagement Optimization",
-        "Team Collaboration",
+        "Project Management",
+        "Python",
+        "LLMs",
+        "Next.js",
+        "FastAPI",
+        "Team Leadership",
+      ],
+    },
+    {
+      company: "UC Merced Data Science Society Club",
+      position: "Project Manager, Research Copilot • Merced, CA",
+      duration: "Nov 2025 – Present",
+      description:
+        "Managed a RAG-based research assistant that ingests PDFs/arXiv links, runs hybrid BM25 + embedding search, and answers questions with citation-grounded quotes. Designed system architecture (Next.js, FastAPI, Postgres + pgvector) and evaluation plan focusing on answer quality, latency, and pilot user feedback.",
+      skills: [
+        "RAG",
+        "System Architecture",
+        "Next.js",
+        "FastAPI",
+        "PostgreSQL",
+        "pgvector",
       ],
     },
   ],
@@ -53,103 +68,101 @@ export const portfolioData = {
       "Python",
       "JavaScript",
       "TypeScript",
+      "C++",
       "Dart",
       "HTML/CSS",
-      "C++",
     ],
-    frameworks: [
-      "Flutter",
+    mlAi: [
+      "PyTorch",
+      "TensorFlow",
+      "scikit-learn",
+      "OpenCV",
+      "NumPy",
+      "pandas",
+      "YOLO (Ultralytics)",
+      "Transformers (Hugging Face)",
+    ],
+    frameworksCloud: [
       "React",
+      "Next.js",
       "React Native",
-      "Node.js",
       "Flask",
       "Firebase",
-      "PyTorch",
-      "OpenCV",
+      "AWS",
+      "Vercel",
     ],
-    mobileAndDatabase: [
-      "Flutter SDK",
-      "Isar Database",
-      "Firebase Auth",
-      "State Management",
-      "Cross-platform Development",
-    ],
-    tools: ["Git", "GitHub", "Google Cloud", "Docker"],
+    tools: ["Git", "GitHub", "Google Cloud", "Docker"], // Keeping tools as it might be useful, though not explicitly in new resume list
     certifications: [
-      "Getting Started with Flutter & Dart",
-      "Introduction to Selenium",
-      "Computer Vision and Image Processing Essentials",
-      "Facial Expression Recognition with PyTorch",
-      "JSE – Certified Entry-Level JavaScript Programmer - OpenEDG",
+      "Computer Vision and Image Processing",
+      "Supervised Machine Learning: Regression and Classification",
+      "JSE – Certified Entry-Level JavaScript Programmer",
     ],
-    leadership: ["Project Manager for Machine Learning Club"],
+    leadership: [
+      "Project Manager for Machine Learning Club",
+      "Project Manager for Data Science Society Club",
+    ],
   },
 
   // Projects
   projects: [
     {
-      title: "AI-Resume",
+      title: "ASL Voice Assistant",
       description:
-        "Built a containerised full-stack web app that reviews résumés with GPT-4 and returns concise, structured feedback plus matching job listings. Designed a RESTful Flask backend that (i) converts PDFs to text with pdfminer / pdf2image, (ii) queries OpenAI for analysis, (iii) exposes upload and health endpoints secured by CORS. Automated job-listing refresh via APScheduler: every 10 min an Apify crawler scrapes new postings; results are pushed to Firebase Realtime Database for instant UI updates. Developed a responsive React + TypeScript front-end (Vite, Tailwind CSS) that lets users upload résumés, view AI feedback, and browse fresh job matches.",
-      technologies: ["Python", "Flask", "React.js", "Tailwind CSS", "Firebase"],
-      dateRange: "June 2025 – Present",
+        "A–Z ASL recognition with emotion-aware voice chat; ONNX Runtime enables client-side inference at 90 FPS. Trained CNN in PyTorch with augmentation and mixed precision; exported to ONNX with dynamic axes. Built Next.js UI (App Router, Tailwind) with accessible components and graceful fallbacks for camera/mic permissions.",
+      technologies: [
+        "Next.js",
+        "PyTorch",
+        "ONNX",
+        "Hume AI",
+        "Vapi",
+        "Tailwind CSS",
+      ],
+      period: "June 2025",
+    },
+    {
+      title: "Real-time Image Classifier",
+      description:
+        "Fine-tuned ResNet-18 on Cats vs Dogs to 98.6% validation accuracy; used cyclic LR and label smoothing. 30 FPS webcam inference via OpenCV pipeline (resize/normalize, softmax thresholding, class overlay). Reproducible training scripts and Jupyter notebooks; automated environment setup with requirements.txt.",
+      technologies: ["Python", "PyTorch", "ResNet-18", "OpenCV", "Jupyter"],
+      period: "June - August 2025",
+      github: "https://github.com/amannindra/CatvsDog_pytorch",
+    },
+    {
+      title: "AI-Resume Analyzer",
+      description:
+        "Containerized full-stack app that ingests PDFs and returns structured, role-aligned feedback with job matches. RESTful Flask service: PDF parsing via pdfminer, input validation, rate limiting, and CORS-secured endpoints. Realtime updates to Firebase; typed React UI that highlights skills gaps and exports notes to Markdown.",
+      technologies: [
+        "Python",
+        "Flask",
+        "React",
+        "TypeScript",
+        "Firebase",
+        "OpenAI API",
+      ],
+      period: "June - July 2025",
       // github: "https://github.com/amannindra/AI-Resume",
     },
     {
-      title: "ASL Voice Assistant",
+      title: "UCM Trip AI Agent",
       description:
-        "Built an interactive web demo that recognises American Sign Language (A–Z) and carries on a real-time, voice-enabled conversation whose tone adapts to the user's detected emotions. Trained a CNN in PyTorch, exported to ONNX, and ran inference client-side with onnxruntime-web—achieving >90 FPS on desktop without server calls. Streamed webcam frames to Hume AI to extract top-3 emotions every second; injected the results into prompts so the assistant replies empathetically. Leveraged Vapi for full-duplex voice: instant transcription, GPT-4 response delivery, and low-latency TTS playback, all within the browser. Designed a modern UI in Next.js (App Router) with Tailwind CSS and Radix primitives; added animated subtitle track and pulsing voice orb for accessibility.",
+        "Natural-language trip planning using Gemini + Maps Grounding; parses intent and constraints to build candidate routes. Dynamic stop matching across 7+ routes using Haversine distance and snapping to road geometry for realism. Secure API routes for geocoding and distance matrix; deployed on Vercel with interactive map and ETA breakdowns.",
       technologies: [
-        "Convolutional Neural Networks",
         "Next.js",
-        "Tailwind CSS",
-        "Python",
-        "PyTorch",
-        "onnxruntime",
+        "TypeScript",
+        "Google Gemini",
+        "Google Maps",
+        "Vercel",
       ],
-      dateRange: "June 2025",
-    },
-    {
-      title: "Realtime Image Classifier",
-      description:
-        "Fine-tuned a ResNet-18on the Kaggle Cats Dogs dataset; reached 98.6% validation accuracy after a single epoch using Cyclic Learning Rate scheduling and data-augmentation. Built a real-time webcam demo—OpenCV streams video frames to a TorchVision preprocessing pipeline and overlays live 'cat'/'dog' predictions at 30 FPS. Packaged reproducible workflows in Jupyter notebooks (catvsdogResnet18.ipynb for training, runcamera.ipynb for live testing) and exported model weights to model.pt for effortless reuse. Published installation script (requirements.txt) enabling one-command setup with torch, torchvision, opencv-python, Pillow, NumPy, Matplotlib, and tqdm.",
-      technologies: [
-        "Python",
-        "PyTorch",
-        "CNN",
-        "TorchVision",
-        "OpenCV",
-        "CUDA",
-        "Jupyter",
-      ],
-      dateRange: "June 2025",
-      github: "https://github.com/amannindra/CatvsDog_pytorch",
-    },
-
-    {
-      title: "EdTok Learning Platform",
-      description:
-        "Created the frontend of EdTok, a platform designed to transform student learning through short-form content and quizzes. EdTok allows teachers to upload educational videos organized by classes, subjects, and chapters, followed by quizzes to test student understanding.",
-      technologies: ["HTML", "CSS", "JavaScript", "React"],
-      // link: "https://edtok.example.com",
-      // github: "https://github.com/amannindra/edtok",
-    },
-    {
-      title: "AI Chatbot",
-      description:
-        "Building a free website where users can interact with multiple LLMs, including GPT-4, Claude 3.0, Meta AI, and Gemini. User data is securely stored via Firebase. The platform is funded through Google Ads.",
-      technologies: ["React", "Firebase", "LLM Models", "Node.js"],
-      // link: "https://aichatbot.example.com",
-      // github: "https://github.com/amannindra/ai-chatbot",
+      period: "Nov 2025",
     },
   ],
 
   // Education
   education: {
-    degree: "Bachelor of Science",
+    degree: "B.S. Computer Science & Engineering",
     major: "Computer Science and Engineering",
     school: "University of California, Merced",
-    graduationYear: "2028",
+    graduationYear: "Expected May 2027",
     highSchool: {
       name: "Milpitas High School",
       graduationYear: "2024",

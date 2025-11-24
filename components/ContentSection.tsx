@@ -17,7 +17,8 @@ interface ContentSectionProps {
   }>;
   skills: {
     languages: string[];
-    frameworks: string[];
+    mlAi: string[];
+    frameworksCloud: string[];
     tools: string[];
     certifications?: string[];
     leadership?: string[];
@@ -68,10 +69,21 @@ export default function ContentSection({
 
           <div>
             <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
-              Frameworks & Libraries
+              ML / AI
             </h3>
             <div className="flex flex-wrap gap-2">
-              {skills.frameworks.map((skill) => (
+              {skills.mlAi.map((skill) => (
+                <SkillBadge key={skill} skill={skill} type="framework" />
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-slate-800 dark:text-slate-200 mb-4">
+              Frameworks & Cloud
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {skills.frameworksCloud.map((skill) => (
                 <SkillBadge key={skill} skill={skill} type="framework" />
               ))}
             </div>
