@@ -16,7 +16,7 @@ interface ProfileSectionProps {
 export default function ProfileSection({
   name,
   // email,
-  profileImage,
+  profileImage = "/main.jpeg",
   linkedinUrl,
   githubUrl,
 }: ProfileSectionProps) {
