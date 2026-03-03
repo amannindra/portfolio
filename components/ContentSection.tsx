@@ -1,7 +1,6 @@
 "use client";
 
 import { ExternalLink } from "lucide-react";
-import SkillBadge from "./SkillBadge";
 import ExperienceCard from "./ExperienceCard";
 import ProjectCard from "./ProjectCard";
 import ResumeSection from "@/components/ResumeSection";
@@ -15,7 +14,7 @@ interface ContentSectionProps {
     description: string;
     skills?: string[];
   }>;
-  skills: {
+  skills?: {
     languages: string[];
     mlAi: string[];
     frameworksCloud: string[];
@@ -35,7 +34,6 @@ interface ContentSectionProps {
 export default function ContentSection({
   about,
   experience,
-  skills,
   projects,
 }: ContentSectionProps) {
   return (
