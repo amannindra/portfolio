@@ -47,7 +47,7 @@ export default function ContentSection({
         </h2>
         <p className="text-lg text-muted-foreground leading-relaxed">{about}</p>
       </section>
-      <section className="mb-16">
+      {/* <section className="mb-16">
         <h2 className="text-3xl font-bold text-foreground mb-8 flex items-center gap-3">
           Technical Skills
         </h2>
@@ -112,7 +112,7 @@ export default function ContentSection({
             </div>
           )}
         </div>
-      </section>
+      </section> */}
       {/* Experience Section */}
       <section className="mb-16">
         <h2 className="text-3xl font-bold text-foreground mb-8 flex items-center gap-3">

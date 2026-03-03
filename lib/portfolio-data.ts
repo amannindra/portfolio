@@ -5,14 +5,28 @@ export const portfolioData = {
     email: "amannindra@gmail.com",
     // phone: "+1 925-605-9936",
     // location: "1431 N Hillview Dr, Milpitas, CA 94035",
-    profileImage: "/profile.jpg", // Replace with your actual profile image
+    profileImage: "/main.jpeg", // Replace with your actual profile image
     linkedinUrl: "https://www.linkedin.com/in/aman-nindra-1b3634270/",
     githubUrl: "https://github.com/amannindra",
   },
 
   // About Section
   about:
-    "I am a Computer Science and Engineering major at UC Merced, specializing in full-stack development, mobile development, and machine learning. Currently serving as a Software Engineering Intern at Arrowz, a mental health startup, where I develop cross-platform mobile applications using Flutter/Dart. As a Project Manager for both the Machine Learning Club and Data Science Society Club, I lead teams building AI-powered tools like Code Companion and Research Copilot. I'm passionate about building AI-powered applications and mobile solutions that solve real-world problems, from containerized web apps with GPT-4 integration to real-time computer vision systems. My experience spans modern web technologies like React and TypeScript, mobile development with Flutter, backend systems with Python and Flask, and cutting-edge machine learning frameworks including PyTorch and OpenCV. I excel at creating innovative solutions that bridge AI research with practical, user-friendly applications, while maintaining focus on performance optimization and seamless user experiences.",
+    "I'm a CS & Engineering student at UC Merced building things at the intersection of AI and real-world hardware. Right now I'm deep in two projects: a self-hosted distributed AI training platform that lets anyone upload datasets and train models through a web UI, and an autonomous electric bicycle running ROS 2 on a Jetson Nano Super. I lead project teams at the ML Club and Data Science Society, where we're shipping an AI debugging tool and a RAG-based research assistant. I care about systems that actually work — GPU scheduling, edge inference, low-latency voice — not just demos.",
+  currentFocus: [
+    {
+      label: "Distributed AI Training",
+      detail: "Self-hosted platform with GPU-aware Kubernetes scheduling",
+    },
+    {
+      label: "Autonomous Robotics",
+      detail: "ROS 2 perception & control on Jetson Nano Super",
+    },
+    {
+      label: "AI Club Projects",
+      detail: "Leading Code Companion & Research Copilot teams",
+    },
+  ],
 
   // Experience
   experience: [
@@ -106,70 +120,76 @@ export const portfolioData = {
   // Projects
   projects: [
     {
-      title: "ASL Voice Assistant",
+      title: "Self-Hosted Distributed AI Training Platform",
       description:
-        "A–Z ASL recognition with emotion-aware voice chat; ONNX Runtime enables client-side inference at 90 FPS. Trained CNN in PyTorch with augmentation and mixed precision; exported to ONNX with dynamic axes. Built Next.js UI (App Router, Tailwind) with accessible components and graceful fallbacks for camera/mic permissions.",
-      technologies: [
-        "Next.js",
-        "PyTorch",
-        "ONNX",
-        "Hume AI",
-        "Vapi",
-        "Tailwind CSS",
-      ],
-      period: "June 2025",
+        "Designing and building a self-hosted AI training platform to enable users worldwide to upload datasets (S3-style), configure hyperparameters, and train models through a web interface. Implementing GPU-aware job scheduling via Kubernetes to dynamically allocate workloads across multiple Linux machines based on real-time VRAM and compute availability. Deploying a Raspberry Pi as a lightweight control node to host the site, manage job queues, and persist datasets to attached external storage.",
+      technologies: ["PyTorch", "Kubernetes", "FastAPI", "React.js", "Linux"],
+      period: "Feb 2026 – Present",
     },
     {
-      title: "Real-time Image Classifier",
+      title: "Autonomous Bicycle",
       description:
-        "Fine-tuned ResNet-18 on Cats vs Dogs to 98.6% validation accuracy; used cyclic LR and label smoothing. 30 FPS webcam inference via OpenCV pipeline (resize/normalize, softmax thresholding, class overlay). Reproducible training scripts and Jupyter notebooks; automated environment setup with requirements.txt.",
-      technologies: ["Python", "PyTorch", "ResNet-18", "OpenCV", "Jupyter"],
-      period: "June - August 2025",
-      github: "https://github.com/amannindra/CatvsDog_pytorch",
+        "Developing an autonomous electric bicycle capable of navigating real-world terrain without human control. Integrating ROS 2 on a Jetson Nano Super (edge AI GPU) for perception, localization, and control.",
+      technologies: ["ROS 2", "Python", "Jetson Nano"],
+      period: "Feb 2026 – Present",
+    },
+    {
+      title: "SafeCall: Emergency Dispatch Simulator",
+      description:
+        "Real-time voice simulator for emergency dispatch training powered by the ElevenLabs Conversational AI API over low-latency WebRTC. Dynamic evaluation engine parses live STT transcripts to score dispatchers across 5 critical criteria and compute a final performance grade. Integrated @vis.gl/react-google-maps for an interactive location-guessing system using Haversine distance scoring.",
+      technologies: [
+        "React.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "WebRTC",
+        "ElevenLabs API",
+      ],
+      period: "Mar 2026",
+      github: "https://github.com/amannindra/Safe-call",
+    },
+    {
+      title: "AI Emotion Intelligence Engine",
+      description:
+        "Fine-tuned BERT-base for 28-class multi-label emotion detection; achieved Macro F1: 0.64–0.70 and Jaccard (samples): 0.59–0.67. Built per-emotion threshold calibration (0.01–0.99 grid search per label), replacing a single global cutoff and improving minority-emotion performance. Benchmarked against GoEmotions baselines (Macro F1 ~0.49) and achieved Macro F1 ~0.64, Precision ~0.52, and Recall ~0.84 in 15 epochs.",
+      technologies: [
+        "PyTorch",
+        "Transformers",
+        "Scikit-learn",
+        "AWS SageMaker",
+      ],
+      period: "Jan 2026",
+      github: "https://github.com/amannindra/GoEmotions-pytorch",
+    },
+    {
+      title: "Wildlife Camera Trap Classification",
+      description:
+        "Achieved Top 4 ranking (log loss: 0.6695) using EVA-Large (300M parameters) Vision Transformer on 16.5K camera trap images across 8 species. Engineered a production-grade training pipeline with DistributedDataParallel (DDP) across 4 Tesla V100 GPUs on AWS SageMaker with mixed-precision training, gradient clipping, and class-weighted loss. Optimized generalization to a -0.64% train-val gap (91.27% val accuracy); outperformed baseline ResNet18 by 3.1%.",
+      technologies: ["PyTorch", "Vision Transformers", "AWS SageMaker"],
+      period: "Jan 2026",
+      github: "https://github.com/amannindra/DSS-Image-Classification",
+    },
+    {
+      title: "ASL Voice Assistant",
+      description:
+        "A–Z ASL recognition with emotion-aware voice chat; ONNX Runtime enables client-side inference at 90 FPS. Trained CNN in PyTorch with augmentation and mixed precision; exported to ONNX with dynamic axes. Built Next.js UI (App Router, Tailwind) with accessible components and graceful fallbacks for camera and mic permissions.",
+      technologies: ["Next.js", "PyTorch", "ONNX", "Hume AI", "Vapi"],
+      period: "June 2025",
+      github: "https://github.com/Shhreya-Anand/Berkeley25",
     },
     {
       title: "AI-Resume Analyzer",
       description:
-        "Containerized full-stack app that ingests PDFs and returns structured, role-aligned feedback with job matches. RESTful Flask service: PDF parsing via pdfminer, input validation, rate limiting, and CORS-secured endpoints. Realtime updates to Firebase; typed React UI that highlights skills gaps and exports notes to Markdown.",
+        "Containerized full-stack app that ingests PDFs and returns resume recommendations, job matches, and a personalized dashboard to manage saved listings. Engineered a Firebase Realtime Database caching layer for job queries, reducing redundant Apify API calls and improving frontend response times. Designed a daily background cron scheduler (APScheduler) with MD5 signature hashing to auto-refresh listings and prevent duplicate database entries.",
       technologies: [
         "Python",
         "Flask",
-        "React",
+        "React.js",
         "TypeScript",
-        "Firebase",
+        "AWS",
         "OpenAI API",
       ],
       period: "June - July 2025",
-      // github: "https://github.com/amannindra/AI-Resume",
-    },
-    {
-      title: "UCM Trip AI Agent",
-      description:
-        "Natural-language trip planning using Gemini + Maps Grounding; parses intent and constraints to build candidate routes. Dynamic stop matching across 7+ routes using Haversine distance and snapping to road geometry for realism. Secure API routes for geocoding and distance matrix; deployed on Vercel with interactive map and ETA breakdowns.",
-      technologies: [
-        "Next.js",
-        "TypeScript",
-        "Google Gemini",
-        "Google Maps",
-        "Vercel",
-      ],
-      period: "Nov 2025",
-    },
-    {
-      title: "EdTok Learning Platform",
-      description:
-        "Created the frontend of EdTok, a platform designed to transform student learning through short-form content and quizzes. EdTok allows teachers to upload educational videos organized by classes, subjects, and chapters, followed by quizzes to test student understanding.",
-      technologies: ["HTML", "CSS", "JavaScript", "React"],
-      // link: "https://edtok.example.com",
-      // github: "https://github.com/amannindra/edtok",
-    },
-    {
-      title: "AI Chatbot",
-      description:
-        "Building a free website where users can interact with multiple LLMs, including GPT-4, Claude 3.0, Meta AI, and Gemini. User data is securely stored via Firebase. The platform is funded through Google Ads.",
-      technologies: ["React", "Firebase", "LLM Models", "Node.js"],
-      // link: "https://aichatbot.example.com",
-      // github: "https://github.com/amannindra/ai-chatbot",
+      github: "https://github.com/amannindra/ML-Resume",
     },
   ],
 

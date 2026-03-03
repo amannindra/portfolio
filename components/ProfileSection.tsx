@@ -16,7 +16,7 @@ interface ProfileSectionProps {
 export default function ProfileSection({
   name,
   // email,
-  profileImage = "/profile.jpg",
+  profileImage,
   linkedinUrl,
   githubUrl,
 }: ProfileSectionProps) {
@@ -44,7 +44,7 @@ export default function ProfileSection({
       </a> */}
 
       {/* Name centered */}
-      <h1 className="absolute inset-0 flex items-center justify-center text-4xl lg:text-5xl font-bold text-white text-center px-4">
+      <h1 className=" h-1/3 absolute inset-0 flex items-center justify-center text-4xl lg:text-5xl font-bold text-white text-center px-4">
         {name}
       </h1>
 

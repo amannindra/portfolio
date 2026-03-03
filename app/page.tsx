@@ -12,7 +12,7 @@ export default function Home() {
         <div className="lg:w-1/3 h-[60vh] lg:h-full relative">
           <ProfileSection
             {...portfolioData.personal}
-            profileImage="/profile.jpg"
+            profileImage={portfolioData.personal.profileImage}
           />
         </div>
 
