@@ -24,7 +24,7 @@ export default function ProfileSection({
     <div className="relative h-[60vh] lg:h-screen w-full overflow-hidden">
       {/* Background profile image */}
       <Image
-        src={profileImage}
+        src={profileImage || ""}
         alt={name}
         fill
         priority
