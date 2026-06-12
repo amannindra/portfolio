@@ -123,14 +123,34 @@ I’m looking for ML engineering, robotics, computer vision, and AI infrastructu
   featuredProjects: [
     {
       title: "Autonomous Bicycle",
-      tagline: "ROS 2 perception and steering stack on Jetson edge hardware.",
+      tagline:
+        "Embedded lane-keeping and steer-by-wire platform for low-speed self-driving — UC Merced Honors Program research.",
       description:
-        "Building a low-speed autonomous bicycle stack for real-world lane perception and steering. Current work uses ROS 2, Jetson edge inference, road/lane segmentation, and controller logic to estimate steering from video. The goal is a working perception-control pipeline that can later run on bicycle hardware.",
-      technologies: ["ROS 2", "Python", "Jetson", "Computer Vision"],
+        "Building a street-legal autonomous bicycle as a low-speed self-driving research platform. A Jetson Nano Super runs YOLOv8 road/lane segmentation to compute a drivable area and target heading, which an ESP32-S3 control hub verifies against IMU data and executes through a custom steer-by-wire actuator and 250W motor. Hard-wired brake relays act as a failsafe that instantly returns control to the rider.",
+      technologies: [
+        "ROS 2",
+        "Python",
+        "Jetson",
+        "YOLOv8",
+        "ESP32-S3",
+        "Computer Vision",
+      ],
       period: "Feb 2026 – Present",
-      github: null as string | null,
+      github: "https://github.com/Duck1405/Autonomous-Bicycle" as string | null,
       link: null as string | null,
-      images: [] as Array<{ src: string; alt: string; caption?: string }>,
+      images: [
+        {
+          src: "/projects/autonomous-bicycle/bike-poster.jpg",
+          alt: "Autonomous bicycle prototype with Jetson Nano Super and steer-by-wire hardware in front of the UC Merced Honors Program research poster",
+          caption:
+            "The bike and research poster at the UC Merced Honors Program showcase",
+        },
+        {
+          src: "/projects/autonomous-bicycle/team-presentation.jpg",
+          alt: "The team presenting the autonomous bicycle at the UC Merced research poster session",
+          caption: "Presenting at the research showcase",
+        },
+      ] as Array<{ src: string; alt: string; caption?: string }>,
       caseStudy: null as {
         problem: string;
         architecture: string;
@@ -166,8 +186,14 @@ I’m looking for ML engineering, robotics, computer vision, and AI infrastructu
       technologies: ["PyTorch", "Vision Transformers", "DDP", "AWS SageMaker"],
       period: "Jan 2026",
       github: "https://github.com/amannindra/DSS-Image-Classification",
-      link: null as string | null,
-      images: [] as Array<{ src: string; alt: string; caption?: string }>,
+      link: "https://www.drivendata.org/competitions/87/competition-image-classification-wildlife-conservation/leaderboard/" as string | null,
+      images: [
+        {
+          src: "/projects/wildlife-classification/leaderboard.png",
+          alt: "Competition leaderboard showing amannindra ranked #4 with a log loss of 0.6695",
+          caption: "Final leaderboard — ranked #4 with 3 submissions",
+        },
+      ] as Array<{ src: string; alt: string; caption?: string }>,
       caseStudy: null as {
         problem: string;
         architecture: string;

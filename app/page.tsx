@@ -23,8 +23,6 @@ export default function Home() {
           <div className="flex flex-col min-h-full">
             <div className="flex-1">
               <ContentSection
-                about={portfolioData.about}
-                currentFocus={portfolioData.currentFocus}
                 experience={portfolioData.experience}
                 skills={portfolioData.skills}
                 featuredProjects={portfolioData.featuredProjects}

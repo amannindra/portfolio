@@ -44,7 +44,7 @@ export default function ProjectCard({
           <div>
             <h3 className="text-xl font-bold text-card-foreground">{title}</h3>
             {tagline && (
-              <p className="text-sm text-primary/80 font-medium mt-0.5">{tagline}</p>
+              <p className="text-sm text-muted-foreground font-medium mt-0.5">{tagline}</p>
             )}
           </div>
           {period && (

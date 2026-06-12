@@ -1,15 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { Linkedin, Github, Mail, FileDown, ArrowRight } from "lucide-react";
+import { Mail, FileDown, ArrowRight } from "lucide-react";
+import { LinkedinIcon, GithubIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ExperienceCard from "./ExperienceCard";
 import ProjectCard from "./ProjectCard";
-
-interface FocusItem {
-  label: string;
-  detail: string;
-}
+import AboutSection from "./AboutSection";
 
 interface ProjectImage {
   src: string;
@@ -55,8 +52,6 @@ interface ExperienceItem {
 }
 
 interface ContentSectionProps {
-  about: string;
-  currentFocus?: FocusItem[];
   contactDescription?: string;
   experience: ExperienceItem[];
   skills?: SkillsMap;
@@ -77,8 +72,6 @@ const SKILL_GROUPS: { key: keyof SkillsMap; label: string }[] = [
 ];
 
 export default function ContentSection({
-  about,
-  currentFocus,
   contactDescription,
   experience,
   skills,
@@ -94,27 +87,7 @@ export default function ContentSection({
 
       {/* About */}
       <section id="about" className="mb-16">
-        <h2 className="text-3xl font-bold text-foreground mb-6">About</h2>
-        <div className="space-y-4">
-          {about.split("\n\n").map((paragraph, i) => (
-            <p key={i} className="text-base text-foreground/80 leading-relaxed">
-              {paragraph}
-            </p>
-          ))}
-        </div>
-
-        {currentFocus && currentFocus.length > 0 && (
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            {currentFocus.map((item) => (
-              <div key={item.label} className="p-4 bg-card rounded-lg border border-border">
-                <h3 className="font-semibold text-card-foreground mb-2 text-sm uppercase tracking-wide">
-                  {item.label}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.detail}</p>
-              </div>
-            ))}
-          </div>
-        )}
+        <AboutSection />
       </section>
 
       {/* Featured Projects */}
@@ -210,15 +183,6 @@ export default function ContentSection({
             </>
           )}
         </div>
-        {resumePdfPath && (
-          <div className="mt-6 rounded-xl overflow-hidden border border-border bg-card">
-            <iframe
-              src={`${resumePdfPath}#view=FitH`}
-              className="w-full h-[1100px]"
-              title="Aman Nindra Resume"
-            />
-          </div>
-        )}
       </section>
 
       {/* Contact */}
@@ -236,7 +200,7 @@ export default function ContentSection({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 bg-card border border-border rounded-lg text-card-foreground font-medium text-sm hover:shadow-md transition-all focus-visible:ring-2 focus-visible:ring-primary"
             >
-              <Linkedin size={16} className="text-primary" />
+              <LinkedinIcon size={16} className="text-primary" />
               LinkedIn
             </a>
           )}
@@ -247,7 +211,7 @@ export default function ContentSection({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 bg-card border border-border rounded-lg text-card-foreground font-medium text-sm hover:shadow-md transition-all focus-visible:ring-2 focus-visible:ring-primary"
             >
-              <Github size={16} className="text-primary" />
+              <GithubIcon size={16} className="text-primary" />
               GitHub
             </a>
           )}
