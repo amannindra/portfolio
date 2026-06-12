@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aman Nindra - Portfolio",
-  description: "Computer Science student at UC Merced specializing in web development and machine learning. Passionate about leveraging AI to address real-world challenges.",
+  title: "Aman Nindra | ML Systems, Robotics, AI Infrastructure",
+  description:
+    "Portfolio of Aman Nindra, a UC Merced Computer Science & Engineering student building ML systems for autonomous robotics, GPU infrastructure, and applied AI.",
 };
 
 export default function RootLayout({

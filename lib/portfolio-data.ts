@@ -3,30 +3,56 @@ export const portfolioData = {
   personal: {
     name: "Aman Nindra",
     email: "amannindra@gmail.com",
-    // phone: "+1 925-605-9936",
-    // location: "1431 N Hillview Dr, Milpitas, CA 94035",
-    profileImage: "/main.jpeg", // Replace with your actual profile image
+    profileImage: "/main.jpeg",
     linkedinUrl: "https://www.linkedin.com/in/aman-nindra-1b3634270/",
     githubUrl: "https://github.com/amannindra",
   },
 
+  // Hero / left panel
+  hero: {
+    role: "ML Systems • Robotics • AI Infrastructure",
+    summary:
+      "Computer Science & Engineering student at UC Merced building autonomous robotics, computer vision, and shared GPU training systems.",
+  },
+
+  // Resume — change the PDF here (file must be in /public)
+  resume: {
+    pdfPath: "/Aman_Resume_full.pdf",
+  },
+
   // About Section
-  about:
-    "I'm a CS & Engineering student at UC Merced building things at the intersection of AI and real-world hardware. Right now I'm deep in two projects: a self-hosted distributed AI training platform that lets anyone upload datasets and train models through a web UI, and an autonomous electric bicycle running ROS 2 on a Jetson Nano Super. I lead project teams at the ML Club and Data Science Society, where we're shipping an AI debugging tool and a RAG-based research assistant. I care about systems that actually work — GPU scheduling, edge inference, low-latency voice — not just demos.",
+  about: `I’m Aman Nindra, a Computer Science & Engineering student at UC Merced. I’m interested in building machine learning systems that do something in the real world, not just models that run in a notebook.
+
+My current work is focused on two systems: an autonomous bicycle and a self-hosted distributed AI training platform. The autonomous bicycle project combines ROS 2, Jetson edge inference, computer vision, road/lane segmentation, and steering control. The training platform focuses on shared GPU workloads, job queues, VRAM-aware scheduling, and multi-user training isolation.
+
+I like the engineering side of machine learning: how models are trained, deployed, monitored, optimized, and connected to real products or hardware. For me, the most interesting problems are usually not just “which model should I use?” but “how do I make this system reliable, fast, and usable?”
+
+At UC Merced, I manage AI projects through the Machine Learning Club and Data Science Society. I’ve helped lead Code Companion, an AI-powered Python debugging tool, and Research Copilot, a RAG-based assistant for searching papers and answering questions with citations.
+
+My project work spans computer vision, NLP, robotics, and full-stack AI applications. I’ve trained Vision Transformers for wildlife image classification, fine-tuned BERT for multi-label emotion detection, built an ASL voice assistant, and developed AI products that connect models with real user interfaces.
+
+I’m looking for ML engineering, robotics, computer vision, and AI infrastructure opportunities. I enjoy learning from hard technical problems and working with teams that care about building systems that actually work.`,
   currentFocus: [
     {
-      label: "Distributed AI Training",
-      detail: "Self-hosted platform with GPU-aware Kubernetes scheduling",
-    },
-    {
       label: "Autonomous Robotics",
-      detail: "ROS 2 perception & control on Jetson Nano Super",
+      detail:
+        "Building a low-speed autonomous bicycle stack using ROS 2, Jetson edge inference, road/lane segmentation, and steering control.",
     },
     {
-      label: "AI Club Projects",
-      detail: "Leading Code Companion & Research Copilot teams",
+      label: "Distributed AI Training",
+      detail:
+        "Designing a self-hosted platform for shared GPU training jobs, queue management, job isolation, and VRAM-aware scheduling.",
+    },
+    {
+      label: "Applied ML Systems",
+      detail:
+        "Working on computer vision, NLP, and infrastructure projects using PyTorch, FastAPI, AWS, and Linux-based deployment workflows.",
     },
   ],
+
+  // Contact Section
+  contactDescription:
+    "I'm looking for ML engineering, robotics, computer vision, and AI infrastructure internships or research collaborations.",
 
   // Experience
   experience: [
@@ -35,40 +61,26 @@ export const portfolioData = {
       position: "Software Engineering Intern • Remote",
       duration: "Sep 2025 – Present",
       description:
-        "Shipped cross-platform Flutter/Dart app for emotion tracking across 25+ screens; modular UI components cut duplication 40%. Standardized state management and responsive layouts; improved build stability and developer velocity across the team.",
-      skills: [
-        "Flutter",
-        "Dart",
-        "Cross-platform Development",
-        "State Management",
-        "UI/UX Design",
-      ],
+        "Shipped a cross-platform Flutter/Dart app for emotion tracking across 25+ screens. Built modular UI components, standardized state management, improved responsive layouts, and reduced duplicated UI code by about 40%.",
+      skills: ["Flutter", "Dart", "State Management", "UI/UX Design"],
     },
     {
       company: "UC Merced Machine Learning Club",
       position: "Project Manager, Code Agent • Merced, CA",
       duration: "Nov 2025 – Present",
       description:
-        "Scoped and led Code Companion, an AI-powered Python debugging tool that ingests GitHub repos, runs flake8/mypy, and suggests LLM-generated fixes with explanations. Defined MVP, metrics, and phased roadmap for Next.js + FastAPI + pgvector stack, coordinating backend and frontend milestones with the team.",
-      skills: [
-        "Project Management",
-        "Python",
-        "LLMs",
-        "Next.js",
-        "FastAPI",
-        "Team Leadership",
-      ],
+        "Scoped and led Code Companion, an AI-powered Python debugging tool that ingests GitHub repositories, runs flake8/mypy checks, and suggests LLM-generated fixes with explanations. Defined MVP scope, metrics, and the roadmap for a Next.js, FastAPI, and pgvector stack.",
+      skills: ["Project Management", "Python", "LLMs", "Next.js", "FastAPI"],
     },
     {
       company: "UC Merced Data Science Society Club",
       position: "Project Manager, Research Copilot • Merced, CA",
       duration: "Nov 2025 – Present",
       description:
-        "Managed a RAG-based research assistant that ingests PDFs/arXiv links, runs hybrid BM25 + embedding search, and answers questions with citation-grounded quotes. Designed system architecture (Next.js, FastAPI, Postgres + pgvector) and evaluation plan focusing on answer quality, latency, and pilot user feedback.",
+        "Managed Research Copilot, a RAG-based assistant that ingests PDFs and arXiv links, retrieves relevant passages with hybrid search, and answers questions with citation-grounded responses. Designed the system architecture and evaluation plan around answer quality, latency, and pilot feedback.",
       skills: [
         "RAG",
         "System Architecture",
-        "Next.js",
         "FastAPI",
         "PostgreSQL",
         "pgvector",
@@ -76,69 +88,129 @@ export const portfolioData = {
     },
   ],
 
-  // Skills
+  // Skills — grouped by capability
   skills: {
-    languages: [
-      "Python",
-      "JavaScript",
-      "TypeScript",
-      "C++",
-      "Dart",
-      "HTML/CSS",
-    ],
-    mlAi: [
+    mlSystems: [
       "PyTorch",
-      "TensorFlow",
-      "scikit-learn",
+      "Transformers",
       "OpenCV",
+      "ONNX Runtime",
+      "scikit-learn",
       "NumPy",
       "pandas",
+    ],
+    roboticsVision: [
+      "ROS 2",
+      "Jetson",
+      "Computer Vision",
+      "Lane / Road Segmentation",
       "YOLO (Ultralytics)",
-      "Transformers (Hugging Face)",
     ],
-    frameworksCloud: [
-      "React",
-      "Next.js",
-      "React Native",
+    backendInfra: [
+      "FastAPI",
       "Flask",
-      "Firebase",
-      "AWS",
-      "Vercel",
       "Docker",
+      "Kubernetes",
+      "Linux",
+      "AWS",
+      "Firebase",
     ],
-    certifications: [
-      "Computer Vision and Image Processing",
-      "Supervised Machine Learning: Regression and Classification",
-      "JSE – Certified Entry-Level JavaScript Programmer",
-    ],
-    leadership: [
-      "Project Manager for Machine Learning Club",
-      "Project Manager for Data Science Society Club",
-    ],
+    frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Flutter"],
+    languages: ["Python", "TypeScript", "JavaScript", "C++", "Dart"],
   },
 
-  // Projects
-  projects: [
-    {
-      title: "Self-Hosted Distributed AI Training Platform",
-      description:
-        "Designing and building a self-hosted AI training platform to enable users worldwide to upload datasets (S3-style), configure hyperparameters, and train models through a web interface. Implementing GPU-aware job scheduling via Kubernetes to dynamically allocate workloads across multiple Linux machines based on real-time VRAM and compute availability. Deploying a Raspberry Pi as a lightweight control node to host the site, manage job queues, and persist datasets to attached external storage.",
-      technologies: ["PyTorch", "Kubernetes", "FastAPI", "React.js", "Linux"],
-      period: "Feb 2026 – Present",
-    },
+  // Featured Projects — shown prominently at top of projects section
+  featuredProjects: [
     {
       title: "Autonomous Bicycle",
+      tagline: "ROS 2 perception and steering stack on Jetson edge hardware.",
       description:
-        "Developing an autonomous electric bicycle capable of navigating real-world terrain without human control. Integrating ROS 2 on a Jetson Nano Super (edge AI GPU) for perception, localization, and control.",
-      technologies: ["ROS 2", "Python", "Jetson Nano"],
+        "Building a low-speed autonomous bicycle stack for real-world lane perception and steering. Current work uses ROS 2, Jetson edge inference, road/lane segmentation, and controller logic to estimate steering from video. The goal is a working perception-control pipeline that can later run on bicycle hardware.",
+      technologies: ["ROS 2", "Python", "Jetson", "Computer Vision"],
       period: "Feb 2026 – Present",
+      github: null as string | null,
+      link: null as string | null,
+      images: [] as Array<{ src: string; alt: string; caption?: string }>,
+      caseStudy: null as {
+        problem: string;
+        architecture: string;
+        pipeline: string;
+        metrics: string;
+        improvements: string;
+      } | null,
     },
     {
-      title: "SafeCall: Emergency Dispatch Simulator",
+      title: "Self-Hosted Distributed AI Training Platform",
+      tagline:
+        "Web platform for launching PyTorch jobs across shared GPU machines.",
       description:
-        "Real-time voice simulator for emergency dispatch training powered by the ElevenLabs Conversational AI API over low-latency WebRTC. Dynamic evaluation engine parses live STT transcripts to score dispatchers across 5 critical criteria and compute a final performance grade. Integrated @vis.gl/react-google-maps for an interactive location-guessing system using Haversine distance scoring.",
+        "Building a web platform for launching PyTorch training jobs on shared GPU machines. The system uses FastAPI, React, Kubernetes, and GPU-aware scheduling to route workloads based on available VRAM and compute. Current focus: job isolation, queue management, logs, and failure handling for multi-user training.",
+      technologies: ["PyTorch", "Kubernetes", "FastAPI", "React", "Linux"],
+      period: "Feb 2026 – Present",
+      github: null as string | null,
+      link: null as string | null,
+      images: [] as Array<{ src: string; alt: string; caption?: string }>,
+      caseStudy: null as {
+        problem: string;
+        architecture: string;
+        pipeline: string;
+        metrics: string;
+        improvements: string;
+      } | null,
+    },
+    {
+      title: "Wildlife Camera Trap Classification",
+      tagline: "Top 4 finish — Vision Transformer on 16.5K camera-trap images.",
+      description:
+        "Ranked Top 4 in a wildlife image classification competition across 8 species and 16.5K camera-trap images. Trained Vision Transformer models with mixed precision, class-weighted loss, and DistributedDataParallel on AWS SageMaker. Achieved about 91% validation accuracy and outperformed a ResNet18 baseline.",
+      technologies: ["PyTorch", "Vision Transformers", "DDP", "AWS SageMaker"],
+      period: "Jan 2026",
+      github: "https://github.com/amannindra/DSS-Image-Classification",
+      link: null as string | null,
+      images: [] as Array<{ src: string; alt: string; caption?: string }>,
+      caseStudy: null as {
+        problem: string;
+        architecture: string;
+        pipeline: string;
+        metrics: string;
+        improvements: string;
+      } | null,
+    },
+    {
+      title: "AI Emotion Intelligence Engine",
+      tagline:
+        "BERT fine-tuned for 28-label emotion classification on GoEmotions.",
+      description:
+        "Fine-tuned BERT-base for 28-label emotion classification on GoEmotions. Improved multi-label performance using per-emotion threshold calibration instead of a single global cutoff. Achieved macro F1 around 0.64–0.70, with stronger recall on minority emotion classes.",
       technologies: [
-        "React.js",
+        "PyTorch",
+        "Transformers",
+        "scikit-learn",
+        "AWS SageMaker",
+      ],
+      period: "Jan 2026",
+      github: "https://github.com/amannindra/GoEmotions-pytorch",
+      link: null as string | null,
+      images: [] as Array<{ src: string; alt: string; caption?: string }>,
+      caseStudy: null as {
+        problem: string;
+        architecture: string;
+        pipeline: string;
+        metrics: string;
+        improvements: string;
+      } | null,
+    },
+  ],
+
+  // Other Projects
+  projects: [
+    {
+      title: "SafeCall: Emergency Dispatch Simulator",
+      tagline: "Real-time voice simulator for emergency dispatch training.",
+      description:
+        "Built a real-time voice simulator for emergency dispatch training using the ElevenLabs Conversational AI API over low-latency WebRTC. Added live transcript scoring across critical dispatcher criteria and an interactive location-guessing system using Google Maps.",
+      technologies: [
+        "React",
         "TypeScript",
         "Tailwind CSS",
         "WebRTC",
@@ -146,62 +218,45 @@ export const portfolioData = {
       ],
       period: "Mar 2026",
       github: "https://github.com/amannindra/Safe-call",
-    },
-    {
-      title: "AI Emotion Intelligence Engine",
-      description:
-        "Fine-tuned BERT-base for 28-class multi-label emotion detection; achieved Macro F1: 0.64–0.70 and Jaccard (samples): 0.59–0.67. Built per-emotion threshold calibration (0.01–0.99 grid search per label), replacing a single global cutoff and improving minority-emotion performance. Benchmarked against GoEmotions baselines (Macro F1 ~0.49) and achieved Macro F1 ~0.64, Precision ~0.52, and Recall ~0.84 in 15 epochs.",
-      technologies: [
-        "PyTorch",
-        "Transformers",
-        "Scikit-learn",
-        "AWS SageMaker",
-      ],
-      period: "Jan 2026",
-      github: "https://github.com/amannindra/GoEmotions-pytorch",
-    },
-    {
-      title: "Wildlife Camera Trap Classification",
-      description:
-        "Achieved Top 4 ranking (log loss: 0.6695) using EVA-Large (300M parameters) Vision Transformer on 16.5K camera trap images across 8 species. Engineered a production-grade training pipeline with DistributedDataParallel (DDP) across 4 Tesla V100 GPUs on AWS SageMaker with mixed-precision training, gradient clipping, and class-weighted loss. Optimized generalization to a -0.64% train-val gap (91.27% val accuracy); outperformed baseline ResNet18 by 3.1%.",
-      technologies: ["PyTorch", "Vision Transformers", "AWS SageMaker"],
-      period: "Jan 2026",
-      github: "https://github.com/amannindra/DSS-Image-Classification",
+      link: null as string | null,
+      images: [] as Array<{ src: string; alt: string; caption?: string }>,
     },
     {
       title: "ASL Voice Assistant",
+      tagline: "A–Z ASL recognition with emotion-aware voice chat.",
       description:
-        "A–Z ASL recognition with emotion-aware voice chat; ONNX Runtime enables client-side inference at 90 FPS. Trained CNN in PyTorch with augmentation and mixed precision; exported to ONNX with dynamic axes. Built Next.js UI (App Router, Tailwind) with accessible components and graceful fallbacks for camera and mic permissions.",
+        "Built an A–Z ASL recognition and emotion-aware voice assistant. Trained a CNN in PyTorch, exported it to ONNX, and ran client-side inference through a Next.js interface with camera and microphone fallbacks.",
       technologies: ["Next.js", "PyTorch", "ONNX", "Hume AI", "Vapi"],
-      period: "June 2025",
+      period: "Jun 2025",
       github: "https://github.com/Shhreya-Anand/Berkeley25",
+      link: null as string | null,
+      images: [] as Array<{ src: string; alt: string; caption?: string }>,
     },
     {
       title: "AI-Resume Analyzer",
+      tagline:
+        "Full-stack resume analysis with job matching and Firebase caching.",
       description:
-        "Containerized full-stack app that ingests PDFs and returns resume recommendations, job matches, and a personalized dashboard to manage saved listings. Engineered a Firebase Realtime Database caching layer for job queries, reducing redundant Apify API calls and improving frontend response times. Designed a daily background cron scheduler (APScheduler) with MD5 signature hashing to auto-refresh listings and prevent duplicate database entries.",
+        "Built a full-stack resume analysis app that ingests PDFs, recommends improvements, matches jobs, and manages saved listings. Added Firebase caching and scheduled background refreshes to reduce redundant API calls and prevent duplicate database entries.",
       technologies: [
         "Python",
         "Flask",
-        "React.js",
+        "React",
         "TypeScript",
-        "AWS",
+        "Firebase",
         "OpenAI API",
       ],
-      period: "June - July 2025",
+      period: "Jun – Jul 2025",
       github: "https://github.com/amannindra/ML-Resume",
+      link: null as string | null,
+      images: [] as Array<{ src: string; alt: string; caption?: string }>,
     },
   ],
 
   // Education
   education: {
     degree: "B.S. Computer Science & Engineering",
-    major: "Computer Science and Engineering",
     school: "University of California, Merced",
     graduationYear: "Expected May 2027",
-    highSchool: {
-      name: "Milpitas High School",
-      graduationYear: "2024",
-    },
   },
 };

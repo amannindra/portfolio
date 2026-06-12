@@ -6,25 +6,34 @@ import { portfolioData } from "@/lib/portfolio-data";
 
 export default function Home() {
   return (
-    <div className="h-screen overflow-hidden bg-background">
-      <div className="flex h-full flex-col lg:flex-row">
+    <div className="min-h-screen bg-background lg:h-screen lg:overflow-hidden">
+      <div className="flex flex-col lg:flex-row lg:h-full">
         {/* Left Section - Profile */}
-        <div className="lg:w-1/3 h-[60vh] lg:h-full relative">
+        <div className="lg:w-1/3 relative lg:h-full">
           <ProfileSection
             {...portfolioData.personal}
-            profileImage={portfolioData.personal.profileImage}
+            role={portfolioData.hero.role}
+            summary={portfolioData.hero.summary}
+            resumePdfPath={portfolioData.resume.pdfPath}
           />
         </div>
 
         {/* Right Section - Content */}
-        <div className="lg:w-2/3 h-[40vh] lg:h-full overflow-y-auto">
+        <div className="lg:w-2/3 lg:h-full lg:overflow-y-auto">
           <div className="flex flex-col min-h-full">
             <div className="flex-1">
               <ContentSection
                 about={portfolioData.about}
+                currentFocus={portfolioData.currentFocus}
                 experience={portfolioData.experience}
                 skills={portfolioData.skills}
+                featuredProjects={portfolioData.featuredProjects}
                 projects={portfolioData.projects}
+resumePdfPath={portfolioData.resume.pdfPath}
+                linkedinUrl={portfolioData.personal.linkedinUrl}
+                githubUrl={portfolioData.personal.githubUrl}
+                email={portfolioData.personal.email}
+                contactDescription={portfolioData.contactDescription}
               />
             </div>
             {/* Footer */}

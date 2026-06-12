@@ -10,9 +10,16 @@ export default function AboutSection() {
         About Me
       </h2>
 
-      <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-10">
-        {portfolioData.about}
-      </p>
+      <div className="space-y-6 mb-10">
+        {portfolioData.about.split(/\n\s*\n/).map((paragraph, index) => (
+          <p
+            key={index}
+            className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed"
+          >
+            {paragraph}
+          </p>
+        ))}
+      </div>
 
       {/* Current Focus */}
       <div className="mb-10">

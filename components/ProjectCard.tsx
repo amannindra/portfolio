@@ -1,80 +1,116 @@
 "use client";
 
-import { ExternalLink, Github } from "lucide-react";
+import Image from "next/image";
+import { Calendar, Github, ExternalLink } from "lucide-react";
+
+interface ProjectImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
 
 interface ProjectCardProps {
   title: string;
+  tagline?: string;
   description: string;
   technologies: string[];
-  link?: string;
-  github?: string;
+  link?: string | null;
+  github?: string | null;
   period?: string;
+  featured?: boolean;
+  images?: ProjectImage[];
 }
 
 export default function ProjectCard({
   title,
+  tagline,
   description,
   technologies,
   link,
   github,
   period,
+  images,
 }: ProjectCardProps) {
+  const thumbnail = images && images.length > 0 ? images[0] : null;
+
   return (
-    <div className="group relative p-6 bg-card rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-border flex flex-col h-full">
-      {/* Gradient border on hover */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+    <div className="group relative p-6 bg-card rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-border">
+      {/* Gradient tint on hover — matches ExperienceCard */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary to-purple-600 rounded-lg opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
 
-      <div className="relative flex-1 flex flex-col">
-        <div className="flex justify-between items-start mb-3">
-          <h3 className="text-xl font-bold text-card-foreground">
-            {title}
-          </h3>
+      <div className="relative">
+        {/* Header row */}
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-2">
+          <div>
+            <h3 className="text-xl font-bold text-card-foreground">{title}</h3>
+            {tagline && (
+              <p className="text-sm text-primary/80 font-medium mt-0.5">{tagline}</p>
+            )}
+          </div>
           {period && (
-            <span className="text-sm text-muted-foreground font-medium">
-              {period}
-            </span>
+            <div className="flex items-center gap-2 text-muted-foreground sm:mt-0 flex-shrink-0">
+              <Calendar size={16} />
+              <span className="text-sm">{period}</span>
+            </div>
           )}
         </div>
 
-        <p className="text-muted-foreground mb-4 flex-1">
-          {description}
-        </p>
+        {/* Thumbnail — only shown when an image is provided */}
+        {thumbnail && (
+          <div className="relative w-full aspect-video rounded-md overflow-hidden bg-muted mb-4">
+            <Image
+              src={thumbnail.src}
+              alt={thumbnail.alt}
+              fill
+              loading="lazy"
+              className="object-cover"
+            />
+          </div>
+        )}
 
-        <div className="flex flex-wrap gap-2 mb-4">
-          {technologies.map((tech) => (
-            <span
-              key={tech}
-              className="px-3 py-1 bg-secondary text-secondary-foreground rounded-md text-sm"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
+        <p className="text-muted-foreground mb-4 leading-relaxed">{description}</p>
 
-        <div className="flex gap-3">
-          {link && (
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
-            >
-              <ExternalLink size={18} />
-              <span className="text-sm font-medium">Live Demo</span>
-            </a>
-          )}
-          {github && (
-            <a
-              href={github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <Github size={18} />
-              <span className="text-sm font-medium">Source Code</span>
-            </a>
-          )}
-        </div>
+        {/* Tech tags */}
+        {technologies.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-4">
+            {technologies.map((tech) => (
+              <span
+                key={tech}
+                className="px-3 py-1 bg-secondary text-secondary-foreground rounded-md text-sm"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {/* Links */}
+        {(github || link) && (
+          <div className="flex gap-4">
+            {github && (
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors text-sm font-medium focus-visible:ring-2 focus-visible:ring-primary rounded"
+              >
+                <Github size={16} />
+                Source Code
+              </a>
+            )}
+            {link && (
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-primary hover:text-primary/80 transition-colors text-sm font-medium focus-visible:ring-2 focus-visible:ring-primary rounded"
+              >
+                <ExternalLink size={16} />
+                Live Demo
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );

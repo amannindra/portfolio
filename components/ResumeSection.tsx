@@ -1,9 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { portfolioData } from "@/lib/portfolio-data";
 
 export default function ResumeSection() {
-  const pdfPath = "/Aman_Nindra_Web_Resume.pdf";
+  const pdfPath = portfolioData.resume.pdfPath;
 
   return (
     <section id="resume" className="mb-16">
