@@ -89,7 +89,7 @@ export default function AboutSection() {
             </p>
           </div>
           <span className="shrink-0 text-xs font-medium text-muted-foreground bg-secondary rounded-full px-3 py-1 mt-0.5">
-            Expected May 2027
+            Expected December 2027
           </span>
         </div>
       </div>

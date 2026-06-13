@@ -286,6 +286,6 @@ I’m looking for ML engineering, robotics, computer vision, and AI infrastructu
   education: {
     degree: "B.S. Computer Science & Engineering",
     school: "University of California, Merced",
-    graduationYear: "Expected May 2027",
+    graduationYear: "Expected December 2027",
   },
 };
