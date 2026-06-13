@@ -160,6 +160,32 @@ I’m looking for ML engineering, robotics, computer vision, and AI infrastructu
       } | null,
     },
     {
+      title: "Wildlife Camera Trap Classification",
+      tagline: "Top 4 finish — Vision Transformer on 16.5K camera-trap images.",
+      description:
+        "Ranked Top 4 in a wildlife image classification competition across 8 species and 16.5K camera-trap images. Trained Vision Transformer models with mixed precision, class-weighted loss, and DistributedDataParallel on AWS SageMaker. Achieved about 91% validation accuracy and outperformed a ResNet18 baseline.",
+      technologies: ["PyTorch", "Vision Transformers", "DDP", "AWS SageMaker"],
+      period: "Jan 2026",
+      github: "https://github.com/amannindra/DSS-Image-Classification",
+      link: "https://www.drivendata.org/competitions/87/competition-image-classification-wildlife-conservation/leaderboard/" as
+        | string
+        | null,
+      images: [
+        {
+          src: "/projects/wildlife-classification/leaderboard.png",
+          alt: "Competition leaderboard showing amannindra ranked #4 with a log loss of 0.6695",
+          caption: "Final leaderboard — ranked #4 with 3 submissions",
+        },
+      ] as Array<{ src: string; alt: string; caption?: string }>,
+      caseStudy: null as {
+        problem: string;
+        architecture: string;
+        pipeline: string;
+        metrics: string;
+        improvements: string;
+      } | null,
+    },
+    {
       title: "Self-Hosted Distributed AI Training Platform",
       tagline:
         "Web platform for launching PyTorch jobs across shared GPU machines.",
@@ -178,30 +204,7 @@ I’m looking for ML engineering, robotics, computer vision, and AI infrastructu
         improvements: string;
       } | null,
     },
-    {
-      title: "Wildlife Camera Trap Classification",
-      tagline: "Top 4 finish — Vision Transformer on 16.5K camera-trap images.",
-      description:
-        "Ranked Top 4 in a wildlife image classification competition across 8 species and 16.5K camera-trap images. Trained Vision Transformer models with mixed precision, class-weighted loss, and DistributedDataParallel on AWS SageMaker. Achieved about 91% validation accuracy and outperformed a ResNet18 baseline.",
-      technologies: ["PyTorch", "Vision Transformers", "DDP", "AWS SageMaker"],
-      period: "Jan 2026",
-      github: "https://github.com/amannindra/DSS-Image-Classification",
-      link: "https://www.drivendata.org/competitions/87/competition-image-classification-wildlife-conservation/leaderboard/" as string | null,
-      images: [
-        {
-          src: "/projects/wildlife-classification/leaderboard.png",
-          alt: "Competition leaderboard showing amannindra ranked #4 with a log loss of 0.6695",
-          caption: "Final leaderboard — ranked #4 with 3 submissions",
-        },
-      ] as Array<{ src: string; alt: string; caption?: string }>,
-      caseStudy: null as {
-        problem: string;
-        architecture: string;
-        pipeline: string;
-        metrics: string;
-        improvements: string;
-      } | null,
-    },
+
     {
       title: "AI Emotion Intelligence Engine",
       tagline:
