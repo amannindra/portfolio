@@ -140,16 +140,16 @@ I’m looking for ML engineering, robotics, computer vision, and AI infrastructu
       link: null as string | null,
       images: [
         {
-          src: "/projects/autonomous-bicycle/bike-poster.jpg",
+          src: "/projects/autonomous-bicycle/bike-with-ross.jpg",
           alt: "Autonomous bicycle prototype with Jetson Nano Super and steer-by-wire hardware in front of the UC Merced Honors Program research poster",
           caption:
             "The bike and research poster at the UC Merced Honors Program showcase",
         },
-        {
-          src: "/projects/autonomous-bicycle/team-presentation.jpg",
-          alt: "The team presenting the autonomous bicycle at the UC Merced research poster session",
-          caption: "Presenting at the research showcase",
-        },
+        // {
+        //   src: "/projects/autonomous-bicycle/team-presentation.jpg",
+        //   alt: "The team presenting the autonomous bicycle at the UC Merced research poster session",
+        //   caption: "Presenting at the research showcase",
+        // },
       ] as Array<{ src: string; alt: string; caption?: string }>,
       caseStudy: null as {
         problem: string;
