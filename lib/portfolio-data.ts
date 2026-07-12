@@ -12,31 +12,36 @@ export const portfolioData = {
   hero: {
     role: "ML Systems • Robotics • AI Infrastructure",
     summary:
-      "Computer Science & Engineering student at UC Merced building autonomous robotics, computer vision, and shared GPU training systems.",
+      "Data Science student at UC San Diego building autonomous vehicle perception, computer vision, and shared GPU training systems.",
   },
 
   // Resume — change the PDF here (file must be in /public)
   resume: {
-    pdfPath: "/Aman_Resume_full.pdf",
+    pdfPath: "/Aman_Nindra_UCSD.pdf",
   },
 
   // About Section
-  about: `I’m Aman Nindra, a Computer Science & Engineering student at UC Merced. I’m interested in building machine learning systems that do something in the real world, not just models that run in a notebook.
+  about: `I’m Aman Nindra, a Data Science student at UC San Diego. I’m interested in building machine learning systems that do something in the real world, not just models that run in a notebook.
 
-My current work is focused on two systems: an autonomous bicycle and a self-hosted distributed AI training platform. The autonomous bicycle project combines ROS 2, Jetson edge inference, computer vision, road/lane segmentation, and steering control. The training platform focuses on shared GPU workloads, job queues, VRAM-aware scheduling, and multi-user training isolation.
+My current work spans autonomous vehicle perception, a Kubernetes-based ML training platform for researchers, and a self-hosted distributed AI training platform. As an undergraduate researcher at UC Merced, I built a real-time ego-lane detection pipeline (LaneATT on CULane) and a YOLOv11 obstacle/traffic-control detector, trained on a SLURM-managed NVIDIA H100 cluster. Separately, I'm architecting a shared Kubernetes ML training platform for 40+ professors and 50+ PhD researchers at the Valley Institute for Sustainability, Technology & Agriculture.
 
 I like the engineering side of machine learning: how models are trained, deployed, monitored, optimized, and connected to real products or hardware. For me, the most interesting problems are usually not just “which model should I use?” but “how do I make this system reliable, fast, and usable?”
 
-At UC Merced, I manage AI projects through the Machine Learning Club and Data Science Society. I’ve helped lead Code Companion, an AI-powered Python debugging tool, and Research Copilot, a RAG-based assistant for searching papers and answering questions with citations.
+I’ve also worked as a software engineering intern at Arrowz, a mental health startup, where I restructured a 24,000-line Flutter/Dart codebase into feature-based modules and shipped the app's onboarding flow and goals-tracking feature end-to-end.
 
 My project work spans computer vision, NLP, robotics, and full-stack AI applications. I’ve trained Vision Transformers for wildlife image classification, fine-tuned BERT for multi-label emotion detection, built an ASL voice assistant, and developed AI products that connect models with real user interfaces.
 
 I’m looking for ML engineering, robotics, computer vision, and AI infrastructure opportunities. I enjoy learning from hard technical problems and working with teams that care about building systems that actually work.`,
   currentFocus: [
     {
-      label: "Autonomous Robotics",
+      label: "Autonomous Vehicle Perception",
       detail:
-        "Building a low-speed autonomous bicycle stack using ROS 2, Jetson edge inference, road/lane segmentation, and steering control.",
+        "Building real-time ego-lane detection (LaneATT/CULane) and YOLOv11-based obstacle detection for autonomous vehicles, trained on a SLURM-managed H100 cluster.",
+    },
+    {
+      label: "Shared ML Training Infrastructure",
+      detail:
+        "Architecting a 3-node Kubernetes ML training platform with Terraform-provisioned workspaces for 40+ professors and 50+ PhD researchers.",
     },
     {
       label: "Distributed AI Training",
@@ -57,12 +62,28 @@ I’m looking for ML engineering, robotics, computer vision, and AI infrastructu
   // Experience
   experience: [
     {
+      company: "University of California, Merced",
+      position: "Undergraduate Researcher • Merced, CA",
+      duration: "May 2026 – Present",
+      description:
+        "Built a real-time ego-lane detection pipeline for autonomous vehicles using LaneATT trained on the CULane dataset, achieving 0.79 F1 (0.84 precision, 0.75 recall) on the validation set, trained on a SLURM-managed NVIDIA H100 cluster. Engineered a COCO preprocessing pipeline distilling 80 classes down to the 4 relevant to driving to train a YOLOv11 obstacle/traffic-control detector, and integrated both models into a single video-inference script for annotated driving footage.",
+      skills: ["PyTorch", "LaneATT", "YOLOv11", "SLURM", "Computer Vision"],
+    },
+    {
+      company: "Valley Institute for Sustainability, Technology & Agriculture",
+      position: "Software Engineering Intern",
+      duration: "May 2026 – Present",
+      description:
+        "Architected a machine learning training platform on a 3-node Kubernetes cluster, including a control-plane node managing orchestration, PostgreSQL user data, and 5TB of persistent storage, plus 2 GPU worker nodes — enabling 40+ professors and 50+ PhD researchers to train computer vision and NLP models. Built Terraform workspace templates for custom PyTorch/TensorFlow/Conda environments with configurable CPU, RAM, and up to 2x NVIDIA A30 GPUs per job, each provisioning a dedicated dev environment via browser-based code-server or the Coder VS Code extension.",
+      skills: ["Kubernetes", "Terraform", "PostgreSQL", "AWS", "Linux"],
+    },
+    {
       company: "Arrowz (Mental Health Startup)",
       position: "Software Engineering Intern • Remote",
-      duration: "Sep 2025 – Present",
+      duration: "Aug 2025 – Jan 2026",
       description:
-        "Shipped a cross-platform Flutter/Dart app for emotion tracking across 25+ screens. Built modular UI components, standardized state management, improved responsive layouts, and reduced duplicated UI code by about 40%.",
-      skills: ["Flutter", "Dart", "State Management", "UI/UX Design"],
+        "Restructured a 24,000-line offline-first Flutter/Dart codebase into feature-based modules, eliminating duplicated legacy screens and consolidating navigation into a single reusable drawer shared by 6 core screens. Built the app's complete first-run experience — a 10-step onboarding questionnaire with Isar local persistence, Firebase-authenticated routing, and an interactive ShowcaseView walkthrough with database-backed progress tracking across 5+ screens. Shipped a goals-tracking feature end-to-end (Isar data model, Provider state management, home-screen UI) and built 4 custom date-range selector widgets for the emotion-analytics dashboard.",
+      skills: ["Flutter", "Dart", "Isar", "Firebase", "State Management"],
     },
     {
       company: "UC Merced Machine Learning Club",
@@ -111,6 +132,9 @@ I’m looking for ML engineering, robotics, computer vision, and AI infrastructu
       "Flask",
       "Docker",
       "Kubernetes",
+      "Terraform",
+      "SLURM",
+      "PostgreSQL",
       "Linux",
       "AWS",
       "Firebase",
@@ -126,12 +150,13 @@ I’m looking for ML engineering, robotics, computer vision, and AI infrastructu
       tagline:
         "Embedded lane-keeping and steer-by-wire platform for low-speed self-driving — UC Merced Honors Program research.",
       description:
-        "Building a street-legal autonomous bicycle as a low-speed self-driving research platform. A Jetson Nano Super runs YOLOv8 road/lane segmentation to compute a drivable area and target heading, which an ESP32-S3 control hub verifies against IMU data and executes through a custom steer-by-wire actuator and 250W motor. Hard-wired brake relays act as a failsafe that instantly returns control to the rider.",
+        "Building a street-legal autonomous bicycle as a low-speed self-driving research platform. A Jetson Nano Super runs a real-time ego-lane detection pipeline (LaneATT trained on CULane, achieving 0.79 F1 / 0.84 precision / 0.75 recall on a SLURM-managed H100 cluster) alongside a YOLOv11 detector trained on a COCO subset distilled to 4 driving-relevant classes (person, vehicle, traffic light, stop sign) for obstacle and traffic-control awareness. Lane and object detection are integrated into a single video-inference script, and an ESP32-S3 control hub verifies the resulting drivable area and target heading against IMU data before executing through a custom steer-by-wire actuator and 250W motor. Hard-wired brake relays act as a failsafe that instantly returns control to the rider.",
       technologies: [
         "ROS 2",
         "Python",
         "Jetson",
-        "YOLOv8",
+        "LaneATT",
+        "YOLOv11",
         "ESP32-S3",
         "Computer Vision",
       ],
@@ -284,8 +309,8 @@ I’m looking for ML engineering, robotics, computer vision, and AI infrastructu
 
   // Education
   education: {
-    degree: "B.S. Computer Science & Engineering",
-    school: "University of California, Merced",
-    graduationYear: "Expected December 2027",
+    degree: "B.S. Data Science",
+    school: "University of California, San Diego",
+    graduationYear: "Expected Spring 2028",
   },
 };
