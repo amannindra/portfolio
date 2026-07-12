@@ -12,7 +12,7 @@ interface ProjectImage {
 interface ProjectCardProps {
   title: string;
   tagline?: string;
-  description: string;
+  description: string | string[];
   technologies: string[];
   link?: string | null;
   github?: string | null;
@@ -32,6 +32,7 @@ export default function ProjectCard({
   images,
 }: ProjectCardProps) {
   const thumbnail = images && images.length > 0 ? images[0] : null;
+  const bullets = Array.isArray(description) ? description : [description];
 
   return (
     <div className="group relative p-6 bg-card rounded-lg shadow-md hover:shadow-xl transition-all duration-300 border border-border">
@@ -68,7 +69,11 @@ export default function ProjectCard({
           </div>
         )}
 
-        <p className="text-muted-foreground mb-4 leading-relaxed">{description}</p>
+        <ul className="text-muted-foreground mb-4 leading-relaxed list-disc list-outside pl-5 space-y-1.5">
+          {bullets.map((bullet, i) => (
+            <li key={i}>{bullet}</li>
+          ))}
+        </ul>
 
         {/* Tech tags */}
         {technologies.length > 0 && (

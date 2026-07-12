@@ -17,7 +17,7 @@ interface ProjectImage {
 interface ProjectItem {
   title: string;
   tagline?: string;
-  description: string;
+  description: string | string[];
   technologies: string[];
   link?: string | null;
   github?: string | null;
@@ -47,8 +47,11 @@ interface ExperienceItem {
   company: string;
   position: string;
   duration: string;
-  description: string;
+  description: string | string[];
   skills?: string[];
+  images?: ProjectImage[];
+  github?: string | null;
+  link?: string | null;
 }
 
 interface ContentSectionProps {

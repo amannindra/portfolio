@@ -4,14 +4,14 @@ import { portfolioData } from "@/lib/portfolio-data";
 
 type Project = {
   title: string;
-  description: string;
+  description: string | string[];
   technologies: string[];
   github?: string;
   link?: string;
 };
 
 export default function ProjectSection() {
-  const projects = portfolioData.projects as Project[];
+  const projects = portfolioData.projects as unknown as Project[];
   return (
     <div className="p-8 lg:p-16 max-w-4xl mx-auto">
       <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
@@ -27,9 +27,14 @@ export default function ProjectSection() {
             <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2">
               {project.title}
             </h3>
-            <p className="text-slate-600 dark:text-slate-300 mb-4">
-              {project.description}
-            </p>
+            <ul className="text-slate-600 dark:text-slate-300 mb-4 list-disc list-outside pl-5 space-y-1">
+              {(Array.isArray(project.description)
+                ? project.description
+                : [project.description]
+              ).map((bullet, i) => (
+                <li key={i}>{bullet}</li>
+              ))}
+            </ul>
             <div className="flex flex-wrap gap-2 mb-4">
               {project.technologies.map((tech) => (
                 <span
