@@ -20,14 +20,19 @@ export const portfolioData = {
     pdfPath: "/Aman_Nindra_UCSD.pdf",
   },
 
-  // About Section
+  // About Section — wrap any phrase in **double asterisks** to make it bold.
+  // Separate paragraphs with a blank line.
+  aboutHeadings: {
+    about: "About",
+    currentFocus: "Currently Working On",
+    education: "Education",
+  },
   about: `I'm Aman Nindra. Data Science, UCSD. I build machine learning systems and try to make them survive outside the notebook they were trained in.
 
-Right now that's two things. A lane detection model for autonomous vehicles that hits 0.79 F1 on CULane, and a Kubernetes platform that lets 40+ professors and 50+ PhD researchers run their own training jobs without fighting over a GPU. I also spent last fall rebuilding a mental health startup's Flutter app, because their 24,000-line codebase had six different versions of the same onboarding screen.
+Right now that's two things. A **lane detection model for autonomous vehicles** that hits 0.79 F1 on CULane, and a **Kubernetes platform** that lets 40+ professors and 50+ PhD researchers run their own training jobs without fighting over a GPU. I also spent last fall rebuilding a mental health startup's Flutter app, because their 24,000-line codebase had six different versions of the same onboarding screen.
 
 I care more about whether a system holds up than whether the model is state of the art. Beyond that, I've trained Vision Transformers for wildlife image classification, fine-tuned BERT for multi-label emotion detection, and built an ASL voice assistant, mostly because I like seeing a model connected to something a person can actually use.
-
-Looking for ML engineering or infrastructure roles. If that's what you're hiring for, let's talk.`,
+`,
   currentFocus: [
     {
       label: "Autonomous Vehicle Perception",
@@ -52,9 +57,7 @@ Looking for ML engineering or infrastructure roles. If that's what you're hiring
   ],
 
   // Contact Section
-  contactDescription:
-    "I'm looking for ML engineering, robotics, computer vision, and AI infrastructure internships or research collaborations.",
-
+  contactDescription:"",
   // Experience
   experience: [
     {
@@ -316,7 +319,7 @@ Looking for ML engineering or infrastructure roles. If that's what you're hiring
   // Education
   education: {
     degree: "B.S. Data Science",
-    school: "UCSD",
+    school: "University of California, San Diego",
     graduationYear: "Expected Spring 2028",
   },
 };

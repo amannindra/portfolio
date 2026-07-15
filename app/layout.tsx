@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Aman Nindra | ML Systems, Robotics, AI Infrastructure",
   description:
-    "Portfolio of Aman Nindra, a UC Merced Computer Science & Engineering student building ML systems for autonomous robotics, GPU infrastructure, and applied AI.",
+    "Portfolio of Aman Nindra, a UC San Diego Data Science student building ML systems for autonomous robotics, GPU infrastructure, and applied AI.",
 };
 
 export default function RootLayout({
