@@ -20,6 +20,10 @@
 # production
 /build
 
+# raw project video sources (optimized web versions are committed separately)
+/public/projects/autonomous-bicycle/depth.mp4
+/public/projects/autonomous-bicycle/output.mp4
+
 # misc
 .DS_Store
 *.pem

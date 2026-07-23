@@ -1,7 +1,14 @@
 "use client";
 
 import Image from "next/image";
-import { Calendar, Building2, Github, ExternalLink } from "lucide-react";
+import Link from "next/link";
+import {
+  ArrowRight,
+  Calendar,
+  Building2,
+  Github,
+  ExternalLink,
+} from "lucide-react";
 
 interface ExperienceImage {
   src: string;
@@ -18,6 +25,7 @@ interface ExperienceCardProps {
   images?: ExperienceImage[];
   github?: string | null;
   link?: string | null;
+  detailHref?: string | null;
 }
 
 export default function ExperienceCard({
@@ -29,6 +37,7 @@ export default function ExperienceCard({
   images,
   github,
   link,
+  detailHref,
 }: ExperienceCardProps) {
   const bullets = Array.isArray(description) ? description : [description];
   const thumbnail = images && images.length > 0 ? images[0] : null;
@@ -85,8 +94,20 @@ export default function ExperienceCard({
           </div>
         )}
 
-        {(github || link) && (
-          <div className="flex gap-4">
+        {(github || link || detailHref) && (
+          <div className="flex flex-wrap gap-x-4 gap-y-2">
+            {detailHref && (
+              <Link
+                href={detailHref}
+                className="group/link inline-flex items-center gap-1.5 text-primary hover:text-primary/80 transition-colors text-sm font-semibold focus-visible:ring-2 focus-visible:ring-primary rounded"
+              >
+                View research case study
+                <ArrowRight
+                  size={16}
+                  className="transition-transform group-hover/link:translate-x-0.5"
+                />
+              </Link>
+            )}
             {github && (
               <a
                 href={github}

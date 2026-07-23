@@ -1,3 +1,108 @@
+export const autonomousBicycleResearch = {
+  title: "Autonomous Bicycle",
+  subtitle: "Embedded lane-keeping and steer-by-wire research platform",
+  institution: "University of California, Merced",
+  role: "Undergraduate Researcher",
+  period: "May 2026 – Present",
+  href: "/projects/autonomous-bicycle",
+  // Keep the public repository link disabled until tracked credentials are
+  // rotated and removed from Git history.
+  github: null as string | null,
+  summary:
+    "An embedded perception and steering research prototype for low-speed autonomous bicycle navigation, combining lane and road understanding, object detection, depth estimation, and Stanley-style steering guidance in an offline video pipeline.",
+  description: [
+    "Built a real-time ego-lane detection pipeline for autonomous vehicles using LaneATT trained on the CULane dataset, achieving 0.79 F1 (0.84 precision, 0.75 recall) on the validation set, trained on a SLURM-managed NVIDIA H100 cluster.",
+    "Engineered a COCO preprocessing pipeline distilling 80 classes down to the 4 relevant to driving (person, vehicle, traffic light, stop sign) to train a YOLOv11 obstacle/traffic-control detector.",
+    "Integrated lane detection and object detection into a single video-inference script with frame pre/post-processing, producing annotated driving footage for qualitative model evaluation.",
+    "Applied this perception stack to a street-legal autonomous bicycle research platform: a Jetson Nano Super runs the lane/object detection models to compute a drivable area and target heading, which an ESP32-S3 control hub verifies against IMU data and executes through a custom steer-by-wire actuator and 250W motor, with hard-wired brake relays as a rider-override failsafe.",
+  ],
+  technologies: [
+    "PyTorch",
+    "LaneATT",
+    "YOLOv11",
+    "SLURM",
+    "ROS 2",
+    "Jetson Nano Super",
+    "ESP32-S3",
+    "Computer Vision",
+  ],
+  highlights: [
+    { value: "0.79", label: "CULane validation F1" },
+    { value: "4", label: "Driving-relevant object classes" },
+    { value: "250W", label: "Street-legal drive motor" },
+  ],
+  measuredResults: [
+    { value: "78.52%", label: "LaneATT best validation F1" },
+    { value: "73.23%", label: "YOLOv11 mAP@50" },
+    { value: "83.88%", label: "HybridNets road IoU" },
+  ],
+  researchTechnologies: [
+    "LaneATT",
+    "YOLOv11",
+    "HybridNets",
+    "Depth Anything V2",
+    "PyTorch",
+    "ONNX Runtime",
+    "TensorRT",
+    "ROS 2",
+  ],
+  systemFlow: [
+    {
+      label: "01",
+      title: "Vision & perception",
+      detail:
+        "LaneATT and HybridNets identify lane and road structure while YOLOv11 detects four driving-relevant object classes.",
+    },
+    {
+      label: "02",
+      title: "Path extraction",
+      detail:
+        "Temporal confidence, ego-lane pairing, missing-edge recovery, and road-center fitting produce a stable path estimate.",
+    },
+    {
+      label: "03",
+      title: "Steering guidance",
+      detail:
+        "Path-heading and cross-track errors feed a Stanley-style controller to produce an offline steering estimate.",
+    },
+    {
+      label: "04",
+      title: "Deployment research",
+      detail:
+        "ONNX Runtime and TensorRT tooling target Jetson-class inference, with ROS 2 and Gazebo used for path-following experiments.",
+    },
+  ],
+  images: [
+    {
+      src: "/projects/autonomous-bicycle/bike-poster.jpg",
+      alt: "Autonomous bicycle prototype with exposed perception and control hardware displayed in front of its research poster",
+      caption:
+        "Figure 1. The integrated autonomous bicycle prototype presented with its embedded lane-keeping research poster.",
+    },
+    {
+      src: "/projects/autonomous-bicycle/team-presentation.jpg",
+      alt: "Four people standing with the autonomous bicycle at a University of California, Merced poster presentation",
+      caption:
+        "Figure 2. The autonomous bicycle at the UC Merced project presentation.",
+    },
+  ],
+  systemEvidence: {
+    perception: {
+      src: "/projects/autonomous-bicycle/perception-demo.mp4",
+      poster: "/projects/autonomous-bicycle/bike_image1.jpg",
+      alt: "Roadway inference output showing lane boundaries, detected vehicles, target heading, steering angle, lateral offset, and confidence",
+      caption:
+        "Lane and object inference with live target-heading, steering, lateral-offset, and confidence overlays.",
+    },
+    video: {
+      src: "/projects/autonomous-bicycle/depth-demo.mp4",
+      poster: "/projects/autonomous-bicycle/depth-poster.jpg",
+      caption:
+        "Monocular depth-estimation output separates nearby roadway structure and vehicles from the distant scene.",
+    },
+  },
+};
+
 export const portfolioData = {
   // Personal Information
   personal: {
@@ -63,24 +168,11 @@ I care more about whether a system holds up than whether the model is state of t
     {
       company: "UCM",
       position: "Undergraduate Researcher • Merced, CA",
-      duration: "May 2026 – Present",
-      description: [
-        "Built a real-time ego-lane detection pipeline for autonomous vehicles using LaneATT trained on the CULane dataset, achieving 0.79 F1 (0.84 precision, 0.75 recall) on the validation set, trained on a SLURM-managed NVIDIA H100 cluster.",
-        "Engineered a COCO preprocessing pipeline distilling 80 classes down to the 4 relevant to driving (person, vehicle, traffic light, stop sign) to train a YOLOv11 obstacle/traffic-control detector.",
-        "Integrated lane detection and object detection into a single video-inference script with frame pre/post-processing, producing annotated driving footage for qualitative model evaluation.",
-        "Applied this perception stack to a street-legal autonomous bicycle research platform: a Jetson Nano Super runs the lane/object detection models to compute a drivable area and target heading, which an ESP32-S3 control hub verifies against IMU data and executes through a custom steer-by-wire actuator and 250W motor, with hard-wired brake relays as a rider-override failsafe.",
-      ],
-      skills: [
-        "PyTorch",
-        "LaneATT",
-        "YOLOv11",
-        "SLURM",
-        "ROS 2",
-        "Jetson",
-        "ESP32-S3",
-        "Computer Vision",
-      ],
-      github: "https://github.com/Duck1405/Autonomous-Bicycle" as string | null,
+      duration: autonomousBicycleResearch.period,
+      description: autonomousBicycleResearch.description,
+      skills: autonomousBicycleResearch.technologies,
+      github: autonomousBicycleResearch.github as string | null,
+      detailHref: autonomousBicycleResearch.href as string | null,
       link: null as string | null,
       images: [
         {

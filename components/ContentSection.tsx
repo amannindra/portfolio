@@ -52,6 +52,7 @@ interface ExperienceItem {
   images?: ProjectImage[];
   github?: string | null;
   link?: string | null;
+  detailHref?: string | null;
 }
 
 interface ContentSectionProps {
