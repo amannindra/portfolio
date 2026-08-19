@@ -15,6 +15,9 @@ export const autonomousBicycleResearch = {
     "Engineered a COCO preprocessing pipeline distilling 80 classes down to the 4 relevant to driving (person, vehicle, traffic light, stop sign) to train a YOLOv11 obstacle/traffic-control detector.",
     "Integrated lane detection and object detection into a single video-inference script with frame pre/post-processing, producing annotated driving footage for qualitative model evaluation.",
     "Applied this perception stack to a street-legal autonomous bicycle research platform: a Jetson Nano Super runs the lane/object detection models to compute a drivable area and target heading, which an ESP32-S3 control hub verifies against IMU data and executes through a custom steer-by-wire actuator and 250W motor, with hard-wired brake relays as a rider-override failsafe.",
+    "Benchmarked ONNX Runtime (CUDA execution provider, FP32) against TensorRT (FP16 mixed-precision) engines on an NVIDIA Jetson Orin Nano Super, measuring a 4.55x latency reduction for LaneATT (125.7→27.6 ms/frame) and 1.83x for YOLOv11n (30.3→16.6 ms/frame), with an additional 1.92x throughput gain from power-mode configuration alone (MAXN_SUPER vs. the 15W default).",
+    "Numerically validated FP16/INT8-quantized model exports against FP32 reference outputs across three architectures — lane detection, object detection, and monocular depth — confirming ≥0.999999 correlation before on-device deployment.",
+    "Profiled concurrent multi-model GPU inference (separate CUDA execution streams) against sequential single-process execution, measuring 1.76–2.2x throughput gains under GPU contention.",
   ],
   technologies: [
     "PyTorch",
@@ -25,6 +28,10 @@ export const autonomousBicycleResearch = {
     "Jetson Nano Super",
     "ESP32-S3",
     "Computer Vision",
+    "TensorRT",
+    "ONNX Runtime",
+    "CUDA",
+    "Model Quantization",
   ],
   highlights: [
     { value: "0.79", label: "CULane validation F1" },
@@ -45,6 +52,8 @@ export const autonomousBicycleResearch = {
     "ONNX Runtime",
     "TensorRT",
     "ROS 2",
+    "CUDA",
+    "Model Quantization",
   ],
   systemFlow: [
     {

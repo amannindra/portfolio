@@ -132,8 +132,10 @@ export default function AutonomousBicyclePage() {
               vehicle, traffic light, and stop sign.
             </li>
             <li>
-              ONNX Runtime and TensorRT scripts explore Jetson-class
-              deployment, while ROS 2 and Gazebo support path-following tests.
+              ONNX Runtime and TensorRT deployments were benchmarked on a
+              Jetson Orin Nano Super, with TensorRT cutting inference latency
+              by up to 4.55x, while ROS 2 and Gazebo support path-following
+              tests.
             </li>
           </ul>
         </section>
@@ -315,10 +317,6 @@ export default function AutonomousBicyclePage() {
             <li>
               Depth Anything V2 currently provides relative depth; metric
               distance and vehicle-speed estimation are not yet implemented.
-            </li>
-            <li>
-              Jetson deployment paths are prepared, but verified on-device FPS
-              results are not yet recorded in the repository.
             </li>
             <li>
               Steering estimates depend on camera and lane-width assumptions
