@@ -163,6 +163,29 @@ export default function AutonomousBicyclePage() {
           </dl>
         </section>
 
+        <section aria-labelledby="deployment-heading" className="mt-14">
+          <h2
+            id="deployment-heading"
+            className="text-center text-2xl font-semibold text-zinc-900"
+          >
+            Deployment benchmarks
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-center text-sm leading-6 text-zinc-500">
+            ONNX Runtime vs. TensorRT and power-mode results measured on an
+            NVIDIA Jetson Orin Nano Super.
+          </p>
+          <dl className="mt-7 grid grid-cols-2 divide-y divide-zinc-200 border-y border-zinc-200 sm:grid-cols-4 sm:divide-x sm:divide-y-0">
+            {research.deploymentBenchmarks.map((result) => (
+              <div key={result.label} className="px-5 py-6 text-center">
+                <dt className="text-sm text-zinc-500">{result.label}</dt>
+                <dd className="mt-1 text-2xl font-semibold text-zinc-900">
+                  {result.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
         <section id="method" className="mt-16 scroll-mt-8">
           <h2 className="text-center text-2xl font-semibold text-zinc-900">
             Method overview

@@ -43,6 +43,12 @@ export const autonomousBicycleResearch = {
     { value: "73.23%", label: "YOLOv11 mAP@50" },
     { value: "83.88%", label: "HybridNets road IoU" },
   ],
+  deploymentBenchmarks: [
+    { value: "4.55×", label: "TensorRT speedup — LaneATT" },
+    { value: "1.83×", label: "TensorRT speedup — YOLOv11n" },
+    { value: "1.92×", label: "Throughput gain from power mode" },
+    { value: "≥0.999999", label: "Quantized-model output correlation" },
+  ],
   researchTechnologies: [
     "LaneATT",
     "YOLOv11",
