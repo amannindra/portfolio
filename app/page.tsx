@@ -35,13 +35,13 @@ export default function Home() {
               />
             </div>
             {/* Footer */}
-            <footer className="mt-auto py-6 px-8 lg:px-16 border-t border-border bg-background">
+            {/* <footer className="mt-auto py-6 px-8 lg:px-16 border-t border-border bg-background">
               <div className="text-center">
                 <p className="text-sm text-muted-foreground">
                   © {new Date().getFullYear()} Aman Nindra. All rights reserved.
                 </p>
               </div>
-            </footer>
+            </footer> */}
           </div>
         </div>
       </div>

@@ -74,7 +74,8 @@ export default function AboutSection({
               href={linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 bg-card border border-border rounded-lg text-card-foreground font-medium text-sm hover:shadow-md transition-all focus-visible:ring-2 focus-visible:ring-primary"
+              className="inline-flex items-center gaGet In Touch
+p-2 px-4 py-2.5 bg-card border border-border rounded-lg text-card-foreground font-medium text-sm hover:shadow-md transition-all focus-visible:ring-2 focus-visible:ring-primary"
             >
               <LinkedinIcon size={16} className="text-primary" />
               LinkedIn
