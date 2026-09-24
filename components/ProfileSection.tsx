@@ -52,7 +52,8 @@ export default function ProfileSection({
             asChild
             className="bg-white text-slate-900 hover:bg-white/90"
           >
-            <a href="#projects">View Projects</a>
+            {/* <a href="#projects">View Projects</a> */}
+          <a href="#experience">View Experience</a>
           </Button>
           <Button
             asChild

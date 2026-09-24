@@ -27,7 +27,7 @@ export default function Home() {
                 skills={portfolioData.skills}
                 featuredProjects={portfolioData.featuredProjects}
                 projects={portfolioData.projects}
-resumePdfPath={portfolioData.resume.pdfPath}
+                resumePdfPath={portfolioData.resume.pdfPath}
                 linkedinUrl={portfolioData.personal.linkedinUrl}
                 githubUrl={portfolioData.personal.githubUrl}
                 email={portfolioData.personal.email}

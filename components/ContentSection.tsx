@@ -91,16 +91,28 @@ export default function ContentSection({
 
       {/* About */}
       <section id="about" className="mb-16">
-        <AboutSection />
+        <AboutSection
+          resumePdfPath={resumePdfPath}
+          email={email}
+          linkedinUrl={linkedinUrl}
+        />
+      </section>
+
+      {/* Experience */}
+      <section id="experience" className="mb-16">
+        <h2 className="text-3xl font-bold text-foreground mb-8">Experience</h2>
+        <div className="space-y-6">
+          {experience.map((exp, index) => (
+            <ExperienceCard key={index} {...exp} />
+          ))}
+        </div>
       </section>
 
       {/* Featured Projects */}
       {featuredProjects && featuredProjects.length > 0 && (
         <section id="projects" className="mb-16">
           <h2 className="text-3xl font-bold text-foreground mb-2">Featured Projects</h2>
-          <p className="text-sm text-muted-foreground mb-8">
-            Strongest work — click GitHub links for source code.
-          </p>
+          {/* Strongest work — click GitHub links for source code. */}
           <div className="space-y-6">
             {featuredProjects.map((project, index) => (
               <ProjectCard key={index} featured {...project} />
@@ -118,24 +130,15 @@ export default function ContentSection({
           >
             <div>
               <p className="font-semibold text-card-foreground">Other Projects</p>
+              {/* {projects.length} more project{projects.length !== 1 ? "s" : ""} — SafeCall, ASL Voice Assistant, AI-Resume Analyzer */}
               <p className="text-sm text-muted-foreground mt-0.5">
-                {projects.length} more project{projects.length !== 1 ? "s" : ""} — SafeCall, ASL Voice Assistant, AI-Resume Analyzer
+                {projects.length} more project{projects.length !== 1 ? "s" : ""}
               </p>
             </div>
             <ArrowRight size={18} className="text-muted-foreground group-hover:text-foreground transition-colors flex-shrink-0 ml-4" />
           </Link>
         </div>
       )}
-
-      {/* Experience */}
-      <section id="experience" className="mb-16">
-        <h2 className="text-3xl font-bold text-foreground mb-8">Experience</h2>
-        <div className="space-y-6">
-          {experience.map((exp, index) => (
-            <ExperienceCard key={index} {...exp} />
-          ))}
-        </div>
-      </section>
 
       {/* Skills */}
       {skills && (
