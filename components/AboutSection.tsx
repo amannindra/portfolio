@@ -1,9 +1,9 @@
 "use client";
 
 import { FileDown, Mail } from "lucide-react";
-import { LinkedinIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { LinkedinIcon, GithubIcon } from "lucide-react";
 import { portfolioData } from "@/lib/portfolio-data";
+
 
 const B = ({ children }: { children: React.ReactNode }) => (
   <strong className="font-semibold text-foreground">{children}</strong>
@@ -20,15 +20,22 @@ interface AboutSectionProps {
   resumePdfPath?: string;
   email?: string;
   linkedinUrl?: string;
+  githubUrl?: string
 }
 
 export default function AboutSection({
   resumePdfPath,
   email,
   linkedinUrl,
+  githubUrl,
+
 }: AboutSectionProps) {
-  const { aboutHeadings: headings, about, currentFocus, education } =
-    portfolioData;
+  const {
+    aboutHeadings: headings,
+    about,
+    currentFocus,
+    education,
+  } = portfolioData;
 
   return (
     <div>
@@ -50,32 +57,48 @@ export default function AboutSection({
       {(resumePdfPath || email || linkedinUrl) && (
         <div className="flex flex-wrap gap-3 mb-10">
           {resumePdfPath && (
-            <Button variant="outline" asChild>
-              <a href={resumePdfPath} target="_blank" rel="noopener noreferrer">
-                <FileDown size={16} className="mr-2" />
-                Resume
-              </a>
-            </Button>
+            <a
+              href={resumePdfPath}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-card border border-border rounded-lg text-card-foreground font-medium text-sm hover:shadow-md transition-all focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              <FileDown size={16} className="text-primary" />
+              Resume
+            </a>
+          )}
+
+
+          {linkedinUrl && (
+            <a
+              href={linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-card border border-border rounded-lg text-card-foreground font-medium text-sm hover:shadow-md transition-all focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              <LinkedinIcon size={16} className="text-primary" />
+              LinkedIn
+            </a>
+          )}
+          {githubUrl && (
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-card border border-border rounded-lg text-card-foreground font-medium text-sm hover:shadow-md transition-all focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              <GithubIcon size={16} className="text-primary" />
+              GitHub
+            </a>
           )}
           {email && (
-            <Button variant="outline" asChild>
-              <a href={`mailto:${email}`}>
-                <Mail size={16} className="mr-2" />
-                {email}
-              </a>
-            </Button>
-          )}
-          {linkedinUrl && (
-            <Button variant="outline" asChild>
-              <a
-                href={linkedinUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <LinkedinIcon size={16} className="mr-2" />
-                LinkedIn
-              </a>
-            </Button>
+            <a
+              href={`mailto:${email}`}
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-card border border-border rounded-lg text-card-foreground font-medium text-sm hover:shadow-md transition-all focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              <Mail size={16} className="text-primary" />
+              Send Email
+            </a>
           )}
         </div>
       )}

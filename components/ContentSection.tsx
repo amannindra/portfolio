@@ -88,13 +88,13 @@ export default function ContentSection({
 }: ContentSectionProps) {
   return (
     <div className="p-8 lg:p-16 max-w-4xl mx-auto">
-
       {/* About */}
       <section id="about" className="mb-16">
         <AboutSection
           resumePdfPath={resumePdfPath}
           email={email}
           linkedinUrl={linkedinUrl}
+          githubUrl={githubUrl}
         />
       </section>
 
@@ -111,7 +111,9 @@ export default function ContentSection({
       {/* Featured Projects */}
       {featuredProjects && featuredProjects.length > 0 && (
         <section id="projects" className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-2">Featured Projects</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-2">
+            Featured Projects
+          </h2>
           {/* Strongest work — click GitHub links for source code. */}
           <div className="space-y-6">
             {featuredProjects.map((project, index) => (
@@ -129,13 +131,18 @@ export default function ContentSection({
             className="group flex items-center justify-between p-5 bg-card border border-border rounded-lg hover:shadow-md transition-all focus-visible:ring-2 focus-visible:ring-primary"
           >
             <div>
-              <p className="font-semibold text-card-foreground">Other Projects</p>
+              <p className="font-semibold text-card-foreground">
+                Other Projects
+              </p>
               {/* {projects.length} more project{projects.length !== 1 ? "s" : ""} — SafeCall, ASL Voice Assistant, AI-Resume Analyzer */}
               <p className="text-sm text-muted-foreground mt-0.5">
                 {projects.length} more project{projects.length !== 1 ? "s" : ""}
               </p>
             </div>
-            <ArrowRight size={18} className="text-muted-foreground group-hover:text-foreground transition-colors flex-shrink-0 ml-4" />
+            <ArrowRight
+              size={18}
+              className="text-muted-foreground group-hover:text-foreground transition-colors flex-shrink-0 ml-4"
+            />
           </Link>
         </div>
       )}
@@ -143,7 +150,9 @@ export default function ContentSection({
       {/* Skills */}
       {skills && (
         <section id="skills" className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8">Technical Skills</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-8">
+            Technical Skills
+          </h2>
           <div className="space-y-6">
             {SKILL_GROUPS.map(({ key, label }) => {
               const group = skills[key];
@@ -171,7 +180,7 @@ export default function ContentSection({
       )}
 
       {/* Resume */}
-      <section id="resume" className="mb-16">
+      {/* <section id="resume" className="mb-16">
         <h2 className="text-3xl font-bold text-foreground mb-6">Resume</h2>
         <div className="flex flex-wrap gap-3">
           {resumePdfPath && (
@@ -190,11 +199,13 @@ export default function ContentSection({
             </>
           )}
         </div>
-      </section>
+      </section> */}
 
       {/* Contact */}
       <section id="contact" className="mb-16">
-        <h2 className="text-3xl font-bold text-foreground mb-6">Get In Touch</h2>
+        <h2 className="text-3xl font-bold text-foreground mb-6">
+          Get In Touch
+        </h2>
         <p className="text-base text-foreground/80 leading-relaxed mb-8">
           {contactDescription ??
             "I'm always interested in new opportunities and collaborations."}
