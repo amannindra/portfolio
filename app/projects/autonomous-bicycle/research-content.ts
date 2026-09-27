@@ -652,6 +652,7 @@ export const experimentGroups: ExperimentGroup[] = [
               "DDRNet/segmentation/output/checkpoint_validation/road_comparison.mp4",
             src: "/projects/autonomous-bicycle/research/ddrnet-test.mp4",
             poster: "/projects/autonomous-bicycle/research/ddrnet-sample.jpg",
+            youtube: "https://youtu.be/2I7xSCpphwU",
           },
         ],
         wentWrong:
