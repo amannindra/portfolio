@@ -260,6 +260,54 @@ const exploratory = (label = "Exploratory"): Status => ({
   kind: "exploratory",
 });
 
+export const EgoLane: Experiment[] = [
+  {
+    id: "egoLane",
+    title: "Ego lane selection",
+    status: partial("Implemented, not formally evaluated"),
+    summary:
+      "Given several candidate lane boundaries from the detector, this step decides which two belong to the bicycle's own lane and builds a midline between them.",
+    why:
+      "A lane model outputs a set of boundary curves per frame, not a labeled left/right pair. Something has to turn that set into the one corridor the bicycle should follow before it can be used for steering.",
+    implemented: [
+      "Restrict every candidate lane to the vertical range shared by all of them, so curves are only compared where they overlap.",
+      "Resample each candidate onto the same 100 y-positions with a second-order polynomial fit (x as a function of y), so unevenly sampled curves become directly comparable.",
+      "Measure each resampled lane's average horizontal offset from the image's center column, both signed and absolute.",
+      "Split candidates into left and right groups by the sign of that offset, then keep only the closest candidate on each side.",
+      "Average the surviving left and right x-positions at each shared y-value to synthesize a midline between them.",
+    ],
+    media: [
+      {
+        kind: "image",
+        caption:
+          "Left, right, and midline curves drawn over the raw candidate lane predictions for a single frame.",
+        placeholder:
+          "One annotated frame showing the raw candidate lanes in a light color and the selected left, right, and midline curves drawn on top in a distinct color.",
+        source: "LaneATT/lib/ego_lanes.py",
+      },
+    ],
+    wentWrong: "",
+    cause: "",
+    learned:
+      "The module keeps two functions, get_ego_lanes2 and get_ego_lanes3, that are exact duplicates of each other; only one is actually needed.",
+    details: [
+      {
+        heading: "How selection can fail",
+        items: [
+          "Fewer than two candidate lanes, or any candidate with fewer than three points, returns no result.",
+          "If the candidates' vertical ranges don't overlap at all, there is no shared region to compare and the function returns no result.",
+          "If every remaining candidate lands on the same side of center, there is no left/right pair to choose from and the function returns no result.",
+        ],
+      },
+      {
+        heading: "Files",
+        items: ["LaneATT/lib/ego_lanes.py"],
+      },
+    ],
+  },
+];
+
+
 export const experimentGroups: ExperimentGroup[] = [
   {
     id: "lane-detection",
@@ -941,34 +989,7 @@ export const failureCases: FailureCase[] = [
       { label: "LaneATT", href: "#laneatt" },
     ],
   },
-  {
-    id: "failure-road-mask",
-    title: "A road mask covering more than the intended lane",
-    media: {
-      kind: "video",
-      caption:
-        "DDRNet road mask spanning adjacent lanes. Any corridor derived from it has more than one valid answer.",
-      placeholder:
-        "Clip or annotated frame from road_comparison.mp4 where the mask covers adjacent lanes or an intersection. Outline the actual ego lane for comparison.",
-      source:
-        "DDRNet/segmentation/output/checkpoint_validation/road_comparison.mp4",
-      src: "/projects/autonomous-bicycle/research/ddrnet-test.mp4",
-      poster: "/projects/autonomous-bicycle/research/ddrnet-sample.jpg",
-      youtube: "https://youtu.be/2I7xSCpphwU",
-    },
-    expected:
-      "The corridor used for steering matches the bicycle’s current lane.",
-    observed:
-      "The road mask covers adjacent lanes, turn pockets, and intersections.",
-    suspectedCause:
-      "The “road” class describes the whole drivable surface, not a lane.",
-    verified:
-      "Yes, by definition of the class. How often corridor extraction then picks the wrong corridor has not been measured.",
-    related: [
-      { label: "HybridNets", href: "#hybridnets" },
-      { label: "DDRNet", href: "#ddrnet" },
-    ],
-  },
+ 
   {
     id: "failure-selector",
     title: "Valid predictions discarded during ego-lane selection",

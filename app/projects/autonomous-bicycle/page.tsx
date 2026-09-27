@@ -11,6 +11,7 @@ import {
   benchmarks,
   deploymentNotes,
   domainComparison,
+  EgoLane,
   experimentGroups,
   failureCases,
   fieldMeasurements,
@@ -211,7 +212,11 @@ export default function AutonomousBicyclePage() {
             {questionSection.intro.map((paragraph, index) => (
               <p
                 key={paragraph}
-                className={index === 0 ? "mt-6 leading-7 text-zinc-600" : "mt-5 leading-7 text-zinc-600"}
+                className={
+                  index === 0
+                    ? "mt-6 leading-7 text-zinc-600"
+                    : "mt-5 leading-7 text-zinc-600"
+                }
               >
                 {paragraph}
               </p>
@@ -243,7 +248,11 @@ export default function AutonomousBicyclePage() {
             {questionSection.outro.map((paragraph, index) => (
               <p
                 key={paragraph}
-                className={index === 0 ? "mt-8 leading-7 text-zinc-600" : "mt-5 leading-7 text-zinc-600"}
+                className={
+                  index === 0
+                    ? "mt-8 leading-7 text-zinc-600"
+                    : "mt-5 leading-7 text-zinc-600"
+                }
               >
                 {paragraph}
               </p>
@@ -295,6 +304,14 @@ export default function AutonomousBicyclePage() {
                 </tbody>
               </table>
               </div> */}
+            </div>
+          </section>
+          <section>
+            <SectionHeading id="egoLane">Ego lane selection</SectionHeading>
+            <div className="mt-6 space-y-10">
+              {EgoLane.map((experiment) => (
+                <ExperimentEntry key={experiment.id} experiment={experiment} />
+              ))}
             </div>
           </section>
 
