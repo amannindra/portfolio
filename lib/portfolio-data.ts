@@ -287,7 +287,7 @@ Previously, I worked on computer vision for autonomous vehicles, developing lane
     },
     {
       company: "University of California, Merced",
-      position: "Undergraduate Researcher at R&N Lab • Merced, CA",
+      position: "Undergraduate Researcher at R&D Lab • Merced, CA",
       duration: autonomousBicycleResearch.period,
       description: [
         "Built a real-time autonomous-vehicle perception pipeline using LaneATT with a ResNet-34 backbone, improving CULane lane-detection F1 from 0.77 to 0.79 through custom data augmentation.",

@@ -24,6 +24,9 @@
 /public/projects/autonomous-bicycle/depth.mp4
 /public/projects/autonomous-bicycle/output.mp4
 
+# research clips are hosted on YouTube instead of committed to the repo
+/public/projects/autonomous-bicycle/research/*.mp4
+
 # misc
 .DS_Store
 *.pem
