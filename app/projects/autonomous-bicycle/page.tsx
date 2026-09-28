@@ -186,14 +186,14 @@ export default function AutonomousBicyclePage() {
             )}
           </div>
         </section>
-
+{/* 
         <div
           role="note"
           className="mt-10 rounded-lg border border-amber-200 bg-amber-50 px-5 py-4 text-left"
         >
           <p className="text-sm font-semibold text-amber-900">Current status</p>
           <p className="mt-1 leading-7 text-amber-900/90">{statusNote}</p>
-        </div>
+        </div> */}
 
         {/* Research poster: keep the original single-column poster presentation. */}
         <section id="poster" className="mx-auto mt-12 max-w-4xl scroll-mt-20">
