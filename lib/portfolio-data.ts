@@ -141,7 +141,7 @@ export const portfolioData = {
   // Resume — change the PDF here (file must be in /public)
   resume: {
     // pdfPath: "/Aman_Nindra_UCSD.pdf",
-    pdfPath: "/Aman_Nindra_UCSD_13.pdf",
+    pdfPath: "/Aman_Nindra_UCSD_17.pdf",
   },
 
   // About Section — wrap any phrase in **double asterisks** to make it bold.
