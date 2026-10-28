@@ -141,7 +141,8 @@ export const portfolioData = {
   // Resume — change the PDF here (file must be in /public)
   resume: {
     // pdfPath: "/Aman_Nindra_UCSD.pdf",
-    pdfPath: "/Aman_Nindra_UCSD_17.pdf",
+    // pdfPath: "/Aman_Nindra_UCSD_17.pdf",
+    pdfPath: "/Aman_Nindra_UCSD_13.pdf",
   },
 
   // About Section — wrap any phrase in **double asterisks** to make it bold.
@@ -287,7 +288,8 @@ Previously, I worked on computer vision for autonomous vehicles, developing lane
     },
     {
       company: "University of California, Merced",
-      position: "Undergraduate Researcher at R&D Lab • Merced, CA",
+      // position: "Undergraduate Researcher at R&D Lab • Merced, CA",
+      position: "Undergraduate Researcher at R&N Lab • Merced, CA",
       duration: autonomousBicycleResearch.period,
       description: [
         "Built a real-time autonomous-vehicle perception pipeline using LaneATT with a ResNet-34 backbone, improving CULane lane-detection F1 from 0.77 to 0.79 through custom data augmentation.",
@@ -422,12 +424,17 @@ Previously, I worked on computer vision for autonomous vehicles, developing lane
       "FastAPI",
       "Flask",
     ],
+    // frontend: ["React.js", "Next.js", "Three.js", "Git", "Firebase"],
     frontend: [
       "React.js",
       "Next.js",
       "Three.js",
       "Git",
       "Firebase",
+      "MCP",
+      "Claude Code",
+      "Codex",
+      "Copilot",
     ],
   },
 
